@@ -29,5 +29,5 @@ This website is an interface developed for portfolio purposes, with a focus on v
 
 ## Project Visualization
 
-To see the prototype in action, you can visit the following: [Click here to view](#)
+To see the prototype in action, you can visit the following: [Click here to view](https://gamaalice.github.io/dev-portfolio/)
 
