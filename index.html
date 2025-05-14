@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -20,443 +21,431 @@
     <nav class="navbar" aria-label="Navegação principal">
       <div class="nav-container">
         <div class="logo">AG</div>
-        
-        <!-- Seletor de Idioma -->
-        <div class="language-selector">
-          <button id="language-toggle" aria-label="Mudar idioma">
-            <span id="current-language">PT</span>
-            <i class="fas fa-globe"></i>
-          </button>
-          <div class="language-dropdown">
-            <button data-lang="pt">Português</button>
-            <button data-lang="en">English</button>
-          </div>
+
+    <!-- Seletor de Idioma -->
+    <div class="language-selector">
+      <button id="language-toggle" aria-label="Mudar idioma">
+        <span id="current-language">PT</span>
+        <i class="fas fa-globe"></i>
+      </button>
+      <div class="language-dropdown">
+        <button data-lang="pt">Português</button>
+        <button data-lang="en">English</button>
+      </div>
+    </div>
+    
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
+      <span class="hamburger"></span>
+    </button>
+    <ul id="main-menu" class="nav-menu">
+      <li><a href="#home" class="nav-link active" data-translate="nav_home">Início</a></li>
+      <li><a href="#sobre" class="nav-link" data-translate="nav_about">Sobre</a></li>
+      <li><a href="#habilidades" class="nav-link" data-translate="nav_skills">Habilidades</a></li>
+      <li><a href="#projetos" class="nav-link" data-translate="nav_projects">Projetos</a></li>
+      <li><a href="#contato" class="nav-link" data-translate="nav_contact">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header com Terminal -->
+<header id="home" role="banner">
+  <div class="header-container">
+
+    <div class="header-content">
+        <h1 class="glitch-text" data-text="Alice Gama">Alice Gama</h1>
+        <p class="subtitulo" data-translate="subtitle">Miss Front-End em construção</p>
+      </div>
+
+    <div class="terminal-vitrine" id="terminal-vitrine"></div>
+    
+    <!-- Redes Sociais -->
+    <aside class="socials" aria-label="Redes sociais">
+      <div class="flip-cover-section github">
+        <a href="https://github.com/gamaalice" target="_blank" class="flip" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <div class="flip-cover">gamaalice</div>
+      </div>
+
+      <div class="flip-cover-section instagram">
+        <a href="https://www.instagram.com/aliceegamas/" target="_blank" class="flip" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <div class="flip-cover">aliceegamas</div>
+      </div>
+
+      <div class="flip-cover-section linkedin">
+        <a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" class="flip" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <div class="flip-cover">Alice Gama</div>
+      </div>
+
+      <div class="flip-cover-section email">
+        <a href="mailto:alice.gama10@gmail.com" class="flip" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <div class="flip-cover">alice.gama10@gmail.com</div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <!-- Seção Sobre -->
+  <section id="sobre" aria-labelledby="titulo-sobre">
+    <div class="container">
+      <h2 id="titulo-sobre" class="section-title" data-translate="about_title">Desenvolvedora Front-End e Engenheira de Software em formação</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p data-translate="about_p1">Sou focada na criação de soluções inovadoras com alta eficiência, usabilidade e acessibilidade. Comprometida com o aprendizado contínuo e a qualidade do código.</p>
+          <p data-translate="about_p2">Tenho grande interesse por CSS e JavaScript, com uma afinidade especial pela área de design de interfaces. Busco constantemente criar experiências digitais que equilibrem estética, funcionalidade e desempenho.</p>
+          <p data-translate="about_p3">Sou entusiasta do ecossistema JavaScript moderno, com habilidades em TypeScript, que agrega maior segurança e robustez ao código.</p>
         </div>
-        
-        <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
-          <span class="hamburger"></span>
-        </button>
-        <ul id="main-menu" class="nav-menu">
-          <li><a href="#home" class="nav-link active" data-translate="nav_home">Início</a></li>
-          <li><a href="#sobre" class="nav-link" data-translate="nav_about">Sobre</a></li>
-          <li><a href="#habilidades" class="nav-link" data-translate="nav_skills">Habilidades</a></li>
-          <li><a href="#projetos" class="nav-link" data-translate="nav_projects">Projetos</a></li>
-          <li><a href="#contato" class="nav-link" data-translate="nav_contact">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Header com Terminal -->
-    <header id="home" role="banner">
-      <div class="header-container">
-
-        <div class="header-content">
-            <h1 class="glitch-text" data-text="Alice Gama">Alice Gama</h1>
-            <p class="subtitulo" data-translate="subtitle">Miss Front-End em construção</p>
-          </div>
-
-        <div class="terminal-vitrine" id="terminal-vitrine"></div>
-        
-        <!-- Redes Sociais -->
-        <aside class="socials" aria-label="Redes sociais">
-          <div class="flip-cover-section github">
-            <a href="https://github.com/gamaalice" target="_blank" class="flip" rel="noopener" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <div class="flip-cover">gamaalice</div>
-          </div>
-    
-          <div class="flip-cover-section instagram">
-            <a href="https://www.instagram.com/aliceegamas/" target="_blank" class="flip" rel="noopener" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <div class="flip-cover">aliceegamas</div>
-          </div>
-    
-          <div class="flip-cover-section linkedin">
-            <a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" class="flip" rel="noopener" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <div class="flip-cover">Alice Gama</div>
-          </div>
-    
-          <div class="flip-cover-section email">
-            <a href="mailto:alice.gama10@gmail.com" class="flip" aria-label="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <div class="flip-cover">alice.gama10@gmail.com</div>
-          </div>
-        </aside>
-      </div>
-    </header>
-
-    <main>
-      <!-- Seção Sobre -->
-      <section id="sobre" aria-labelledby="titulo-sobre">
-        <div class="container">
-          <h2 id="titulo-sobre" class="section-title" data-translate="about_title">Desenvolvedora Front-End e Engenheira de Software em formação</h2>
-          <div class="about-content">
-            <div class="about-text">
-              <p data-translate="about_p1">Sou focada na criação de soluções inovadoras com alta eficiência, usabilidade e acessibilidade. Comprometida com o aprendizado contínuo e a qualidade do código.</p>
-              <p data-translate="about_p2">Tenho grande interesse por CSS e JavaScript, com uma afinidade especial pela área de design de interfaces. Busco constantemente criar experiências digitais que equilibrem estética, funcionalidade e desempenho.</p>
-              <p data-translate="about_p3">Sou entusiasta do ecossistema JavaScript moderno, com habilidades em TypeScript, que agrega maior segurança e robustez ao código.</p>
-            </div>
-            <div class="about-image">
-              <div class="code-snippet">
-                <pre><code>// about-me.js
+        <div class="about-image">
+          <div class="code-snippet">
+            <pre><code>// about-me.js
 
 const developer = {
-  name: "Alice Gama",
-  role: "Front-End Developer",
-  Academic: "Software Engineering",
-  passions: [
-    "Web Design",
-    "Tailwind CSS",
-    "JavaScript",
-    "Clean Code"
-  ],
-  learning: "TypeScript" e "UI/UX Design",
-  goals: "Creating memorable digital experiences"
-};</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+name: "Alice Gama",
+role: "Front-End Developer",
+Academic: "Software Engineering",
+passions: [
+"Web Design",
+"Tailwind CSS",
+"JavaScript",
+"Clean Code"
+],
+learning: "TypeScript" e "UI/UX Design",
+goals: "Creating memorable digital experiences"
+};</code></pre> </div> </div> </div> </div> </section>
 
-      <!-- Seção Habilidades -->
-      <section id="habilidades" aria-labelledby="titulo-habilidades">
-        <div class="container">
-          <h2 id="titulo-habilidades" class="section-title" data-translate="skills_title">Minhas Principais Habilidades</h2>
-          <p class="section-description" data-translate="skills_description">Nesta seção, encontram-se as linguagens, ferramentas e tecnologias com as quais tenho mais afinidade no momento. São os principais recursos que utilizo para transformar ideias em interfaces funcionais, criativas e acessíveis.</p>
-        
-          <div class="terminal-habilidades">
-            <div class="editor">
-              <div class="sidebar">
-                <p class="sidebar-title">EXPLORER</p>
-                <ul>
-                  <li class="file ativo" data-file="script">script.js</li>
-                  <li class="file" data-file="html">index.html</li>
-                  <li class="file" data-file="css">styles.css</li>
-                </ul>
+  <!-- Seção Habilidades -->
+  <section id="habilidades" aria-labelledby="titulo-habilidades">
+    <div class="container">
+      <h2 id="titulo-habilidades" class="section-title" data-translate="skills_title">Minhas Principais Habilidades</h2>
+      <p class="section-description" data-translate="skills_description">Nesta seção, encontram-se as linguagens, ferramentas e tecnologias com as quais tenho mais afinidade no momento. São os principais recursos que utilizo para transformar ideias em interfaces funcionais, criativas e acessíveis.</p>
+    
+      <div class="terminal-habilidades">
+        <div class="editor">
+          <div class="sidebar">
+            <p class="sidebar-title">EXPLORER</p>
+            <ul>
+              <li class="file ativo" data-file="script">script.js</li>
+              <li class="file" data-file="html">index.html</li>
+              <li class="file" data-file="css">styles.css</li>
+            </ul>
+          </div>
+          <div class="main-code">
+            <div class="code-area">
+              <div class="code-header">
+                <span class="dot purple1"></span>
+                <span class="dot purple2"></span>
+                <span class="dot purple3"></span>
+                <span class="filename">script.js</span>
               </div>
-              <div class="main-code">
-                <div class="code-area">
-                  <div class="code-header">
-                    <span class="dot purple1"></span>
-                    <span class="dot purple2"></span>
-                    <span class="dot purple3"></span>
-                    <span class="filename">script.js</span>
-                  </div>
-                  <div class="code-content" id="code-content">
-                    <pre>
+              <div class="code-content" id="code-content">
+                <pre>
 // script.js
 
 export const mainLanguages = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "TypeScript",
-  "SQL",
-  "Tailwind CSS",
-  "JQuery",
-  "Bootstrap"
+"HTML5",
+"CSS3",
+"JavaScript",
+"TypeScript",
+"SQL",
+"Tailwind CSS",
+"JQuery",
+"Bootstrap"
 ];
 
 export const toolsAndLibraries = [
-  "Git",
-  "GitHub",
-  "React",
-  "Styled Components",
-  "Framer Motion",
-  "VS Code",
-  "PyCharm"
-];
-                    </pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+"Git",
+"GitHub",
+"React",
+"Styled Components",
+"Framer Motion",
+"VS Code",
+"PyCharm"
+]; </pre> </div> </div> </div> </div> </div>
 
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3 data-translate="skills_languages">Linguagens</h3>
-              <div class="skills-list">
-                <div class="skill-item" data-skill="HTML5">
-                  <i class="devicon-html5-plain colored"></i>
-                  <span>HTML5</span>
-                </div>
-                <div class="skill-item" data-skill="CSS3">
-                  <i class="devicon-css3-plain colored"></i>
-                  <span>CSS3</span>
-                </div>
-                <div class="skill-item" data-skill="JavaScript">
-                  <i class="devicon-javascript-plain colored"></i>
-                  <span>JavaScript</span>
-                </div>
-                <div class="skill-item" data-skill="TypeScript">
-                  <i class="devicon-typescript-plain colored"></i>
-                  <span>TypeScript</span>
-                </div>
-              </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 data-translate="skills_languages">Linguagens</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-skill="HTML5">
+              <i class="devicon-html5-plain colored"></i>
+              <span>HTML5</span>
             </div>
-            <div class="skill-category">
-              <h3 data-translate="skills_frameworks">Frameworks & Bibliotecas</h3>
-              <div class="skills-list">
-                <div class="skill-item" data-skill="React">
-                  <i class="devicon-react-original colored"></i>
-                  <span>React</span>
-                </div>
-                <div class="skill-item" data-skill="jQuery">
-                  <i class="devicon-jquery-plain colored"></i>
-                  <span>jQuery</span>
-                </div>
-                <div class="skill-item" data-skill="Bootstrap">
-                  <i class="devicon-bootstrap-plain colored"></i>
-                  <span>Bootstrap</span>
-                </div>
-                <div class="skill-item" data-skill="Tailwind">
-                  <i class="devicon-tailwindcss-plain colored"></i>
-                  <span>Tailwind</span>
-                </div>
-              </div>
+            <div class="skill-item" data-skill="CSS3">
+              <i class="devicon-css3-plain colored"></i>
+              <span>CSS3</span>
             </div>
-            <div class="skill-category">
-              <h3 data-translate="skills_tools">Ferramentas</h3>
-              <div class="skills-list">
-                <div class="skill-item" data-skill="Git">
-                  <i class="devicon-git-plain colored"></i>
-                  <span>Git</span>
-                </div>
-                <div class="skill-item" data-skill="GitHub">
-                  <i class="devicon-github-original"></i>
-                  <span>GitHub</span>
-                </div>
-                <div class="skill-item" data-skill="VS Code">
-                  <i class="devicon-vscode-plain colored"></i>
-                  <span>VS Code</span>
-                </div>
-                <div class="skill-item" data-skill="PyCharm">
-                  <i class="devicon-pycharm-plain colored"></i>
-                  <span>PyCharm</span>
-                </div>
-              </div>
+            <div class="skill-item" data-skill="JavaScript">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item" data-skill="TypeScript">
+              <i class="devicon-typescript-plain colored"></i>
+              <span>TypeScript</span>
             </div>
           </div>
         </div>
-      </section>
+        <div class="skill-category">
+          <h3 data-translate="skills_frameworks">Frameworks & Bibliotecas</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-skill="React">
+              <i class="devicon-react-original colored"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-item" data-skill="jQuery">
+              <i class="devicon-jquery-plain colored"></i>
+              <span>jQuery</span>
+            </div>
+            <div class="skill-item" data-skill="Bootstrap">
+              <i class="devicon-bootstrap-plain colored"></i>
+              <span>Bootstrap</span>
+            </div>
+            <div class="skill-item" data-skill="Tailwind">
+              <i class="devicon-tailwindcss-plain colored"></i>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 data-translate="skills_tools">Ferramentas</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-skill="Git">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-item" data-skill="GitHub">
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="skill-item" data-skill="VS Code">
+              <i class="devicon-vscode-plain colored"></i>
+              <span>VS Code</span>
+            </div>
+            <div class="skill-item" data-skill="PyCharm">
+              <i class="devicon-pycharm-plain colored"></i>
+              <span>PyCharm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <!-- Seção Projetos -->
+ <!-- Seção Projetos -->
 <section id="projetos" class="section">
   <div class="container">
     <h2 class="section-title" data-translate="projects_title">Projetos</h2>
-    
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <!-- Slide 1 -->
-        <article class="slide" data-project="social-button">
-          <div class="project-image">
-            <img src="./assets/button.png" alt="Interface do projeto Social Button">
-          </div>
-          <div class="project-content">
-            <h3>Social Button</h3>
-            <p>Este projeto apresenta um conjunto de botões sociais interativos, que exibem a informação proporcionando uma experiência visual moderna. Cada botão possui um design responsivo e cores alinhadas à identidade da plataforma, garantindo estética e funcionalidade.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/socialbutton" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/socialbutton/" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Slide 2 -->
-        <article class="slide" data-project="dark-mode">
-          <div class="project-image">
-            <img src="./assets/darkmode.png" alt="Interface do projeto Mode Dark">
-          </div>
-          <div class="project-content">
-            <h3>Dark Mode</h3>
-            <p>Este projeto implementa uma interface de usuário com alternância entre temas claro e escuro, permitindo uma experiência visual interativa. Além disso, possui um menu de navegação estruturado com seções definidas, utilizando ícones da biblioteca Font Awesome.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/modedark" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/modedark/" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Slide 3 -->
-        <article class="slide" data-project="login-style">
-          <div class="project-image">
-            <img src="./assets/loginstyle.png" alt="Interface do projeto Login Style">
-          </div>
-          <div class="project-content">
-            <h3>Login Style</h3>
-            <p>Este projeto apresenta um formulário de login estilizado, com animações interativas que proporcionam uma experiência moderna e intuitiva ao usuário. Além do design responsivo, ele inclui alternância de temas, validação de campos e alertas para garantir acessibilidade e funcionalidade eficientes.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/loginstyle" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/loginstyle/" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Slide 4 -->
-        <article class="slide" data-project="valentine-js">
-          <div class="project-image">
-            <img src="./assets/playingjs.png" alt="Interface do projeto Valentine JS">
-          </div>
-          <div class="project-content">
-            <h3>Will you be my Valentine?</h3>
-            <p>Este projeto apresenta uma aplicação interativa desenvolvida com JavaScript, proporcionando uma experiência dinâmica e envolvente ao usuário. Ele inclui mensagens personalizadas no botão "Não", aumento progressivo do botão "Sim" e redirecionamento condicional para uma página dedicada, tornando a interação divertida e intuitiva.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/playingjs" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/playingjs/" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Slide 5 -->
-        <article class="slide" data-project="ease-engenharia">
-          <div class="project-image">
-            <img src="./assets/prototipoease.png" alt="Interface do protótipo para o site da Ease Engenharia">
-          </div>
-          <div class="project-content">
-            <h3>Protótipo - Ease Engenharia</h3>
-            <p>Este projeto apresenta um protótipo de site desenvolvido para a empresa Ease Engenharia, com foco na exibição profissional de seus serviços e projetos concluídos.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/easy-portifolio" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/easy-portifolio/index.html" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-      
-  <!-- Slide 6 -->
-        <article class="slide" data-project="dulceeco">
-          <div class="project-image">
-            <img src="./assets/dulceeco2.png" alt="Prototipo Site Doceria">
-          </div>
-          <div class="project-content">
-            <h3>Protótipo - Dulce&Co</h3>
-            <p>Este projeto apresenta o protótipo de um site desenvolvido para uma marca em fase de lançamento, com foco em identidade visual, usabilidade e presença digital.</p>
-            <div class="project-links">
-              <a href="https://github.com/gamaalice/dulceeco" target="_blank" rel="noopener" class="project-link github">
-                <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
-              </a>
-              <a href="https://gamaalice.github.io/dulceeco/" target="_blank" rel="noopener" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
 
-      <!-- Indicadores -->
-      <div class="carousel-indicators">
-        <button class="indicator active" aria-label="Ir para o projeto 1"></button>
-        <button class="indicator" aria-label="Ir para o projeto 2"></button>
-        <button class="indicator" aria-label="Ir para o projeto 3"></button>
-        <button class="indicator" aria-label="Ir para o projeto 4"></button>
-        <button class="indicator" aria-label="Ir para o projeto 5"></button>
-        <button class="indicator" aria-label="Ir para o projeto 6"></button>
+<div class="carousel-container">
+  <div class="carousel-track">
+    <!-- Slide 1 -->
+    <article class="slide" data-project="social-button">
+      <div class="project-image">
+        <img src="./assets/button.png" alt="Interface do projeto Social Button">
       </div>
-    </div>
+      <div class="project-content">
+        <h3>Social Button</h3>
+        <p>Este projeto apresenta um conjunto de botões sociais interativos, que exibem a informação proporcionando uma experiência visual moderna. Cada botão possui um design responsivo e cores alinhadas à identidade da plataforma, garantindo estética e funcionalidade.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/socialbutton" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/socialbutton/" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Slide 2 -->
+    <article class="slide" data-project="dark-mode">
+      <div class="project-image">
+        <img src="./assets/darkmode.png" alt="Interface do projeto Mode Dark">
+      </div>
+      <div class="project-content">
+        <h3>Dark Mode</h3>
+        <p>Este projeto implementa uma interface de usuário com alternância entre temas claro e escuro, permitindo uma experiência visual interativa. Além disso, possui um menu de navegação estruturado com seções definidas, utilizando ícones da biblioteca Font Awesome.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/modedark" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/modedark/" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Slide 3 -->
+    <article class="slide" data-project="login-style">
+      <div class="project-image">
+        <img src="./assets/loginstyle.png" alt="Interface do projeto Login Style">
+      </div>
+      <div class="project-content">
+        <h3>Login Style</h3>
+        <p>Este projeto apresenta um formulário de login estilizado, com animações interativas que proporcionam uma experiência moderna e intuitiva ao usuário. Além do design responsivo, ele inclui alternância de temas, validação de campos e alertas para garantir acessibilidade e funcionalidade eficientes.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/loginstyle" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/loginstyle/" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Slide 4 -->
+    <article class="slide" data-project="valentine-js">
+      <div class="project-image">
+        <img src="./assets/playingjs.png" alt="Interface do projeto Valentine JS">
+      </div>
+      <div class="project-content">
+        <h3>Will you be my Valentine?</h3>
+        <p>Este projeto apresenta uma aplicação interativa desenvolvida com JavaScript, proporcionando uma experiência dinâmica e envolvente ao usuário. Ele inclui mensagens personalizadas no botão "Não", aumento progressivo do botão "Sim" e redirecionamento condicional para uma página dedicada, tornando a interação divertida e intuitiva.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/playingjs" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/playingjs/" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Slide 5 -->
+    <article class="slide" data-project="ease-engenharia">
+      <div class="project-image">
+        <img src="./assets/prototipoease.png" alt="Interface do protótipo para o site da Ease Engenharia">
+      </div>
+      <div class="project-content">
+        <h3>Protótipo - Ease Engenharia</h3>
+        <p>Este projeto apresenta um protótipo de site desenvolvido para a empresa Ease Engenharia, com foco na exibição profissional de seus serviços e projetos concluídos.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/easy-portifolio" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/easy-portifolio/index.html" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  
+  <!-- Slide 6 -->
+    <article class="slide" data-project="dulceeco">
+      <div class="project-image">
+        <img src="./assets/dulceeco2.png" alt="Prototipo Site Doceria">
+      </div>
+      <div class="project-content">
+        <h3>Protótipo - Dulce&Co</h3>
+        <p>Este projeto apresenta o protótipo de um site desenvolvido para uma marca em fase de lançamento, com foco em identidade visual, usabilidade e presença digital.</p>
+        <div class="project-links">
+          <a href="https://github.com/gamaalice/dulceeco" target="_blank" rel="noopener" class="project-link github">
+            <i class="fab fa-github"></i> <span data-translate="view_github">Ver no GitHub</span>
+          </a>
+          <a href="https://gamaalice.github.io/dulceeco/" target="_blank" rel="noopener" class="project-link demo">
+            <i class="fas fa-external-link-alt"></i> <span data-translate="view_demo">Demo</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button class="indicator active" aria-label="Ir para o projeto 1"></button>
+    <button class="indicator" aria-label="Ir para o projeto 2"></button>
+    <button class="indicator" aria-label="Ir para o projeto 3"></button>
+    <button class="indicator" aria-label="Ir para o projeto 4"></button>
+    <button class="indicator" aria-label="Ir para o projeto 5"></button>
+    <button class="indicator" aria-label="Ir para o projeto 6"></button>
+  </div>
+</div>
   </div>
 </section>
 
-
-      <!-- Seção Contato -->
-      <section id="contato" aria-labelledby="titulo-contato">
-        <div class="container">
-          <h2 id="titulo-contato" class="section-title" data-translate="contact_title">Entre em Contato</h2>
-          <p class="section-description" data-translate="contact_description">Estou disponível para novos projetos e oportunidades.</p>
-          
-          <div class="contact-container">
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
-                  <h3 data-translate="contact_email">Email</h3>
-                  <p><a href="mailto:alice.gama10@gmail.com">alice.gama10@gmail.com</a></p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <div>
-                  <h3>LinkedIn</h3>
-                  <p><a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" rel="noopener">Alice Gama</a></p>
-                </div>
-              </div>
+  <!-- Seção Contato -->
+  <section id="contato" aria-labelledby="titulo-contato">
+    <div class="container">
+      <h2 id="titulo-contato" class="section-title" data-translate="contact_title">Entre em Contato</h2>
+      <p class="section-description" data-translate="contact_description">Estou disponível para novos projetos e oportunidades.</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3 data-translate="contact_email">Email</h3>
+              <p><a href="mailto:alice.gama10@gmail.com">alice.gama10@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <h3>LinkedIn</h3>
+              <p><a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" rel="noopener">Alice Gama</a></p>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <span>AG</span>
-          </div>
-          <div class="footer-links">
-            <a href="#home" data-translate="nav_home">Início</a>
-            <a href="#sobre" data-translate="nav_about">Sobre</a>
-            <a href="#habilidades" data-translate="nav_skills">Habilidades</a>
-            <a href="#projetos" data-translate="nav_projects">Projetos</a>
-            <a href="#contato" data-translate="nav_contact">Contato</a>
-          </div>
-          <div class="footer-social">
-            <a href="https://github.com/gamaalice" target="_blank" rel="noopener" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/aliceegamas/" target="_blank" rel="noopener" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Alice Gama. <span data-translate="footer_rights">Todos os direitos reservados.</span></p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Botão de voltar ao topo -->
-    <button id="back-to-top" aria-label="Voltar ao topo">
-      <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
       </div>
     </div>
+  </section>
+</main>
 
-    <script src="./js/script.js"></script>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span>AG</span>
+      </div>
+      <div class="footer-links">
+        <a href="#home" data-translate="nav_home">Início</a>
+        <a href="#sobre" data-translate="nav_about">Sobre</a>
+        <a href="#habilidades" data-translate="nav_skills">Habilidades</a>
+        <a href="#projetos" data-translate="nav_projects">Projetos</a>
+        <a href="#contato" data-translate="nav_contact">Contato</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/gamaalice" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alice-gama-75913022a/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/aliceegamas/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Alice Gama. <span data-translate="footer_rights">Todos os direitos reservados.</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão de voltar ao topo -->
+<button id="back-to-top" aria-label="Voltar ao topo">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</div>
+
+<script src="./js/script.js"></script>
   </body>
 </html>
