@@ -183,12 +183,6 @@ projectSlides.forEach(slide => {
     if (titleElement) titleElement.textContent = projectData.title;
     if (descriptionElement) descriptionElement.textContent = projectData.description;
     
-    // Atualizar textos dos links
-    const githubLink = slide.querySelector('.github span');
-    const demoLink = slide.querySelector('.demo span');
-    
-    if (githubLink) githubLink.textContent = translations[language].view_github;
-    if (demoLink) demoLink.textContent = translations[language].view_demo;
   }
 });
 }
@@ -351,6 +345,29 @@ function showSlide(index) {
   
   currentSlide = index;
 }
+
+function showSlide(index) {
+  // Atualizar visualmente o slide
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+
+  // Atualizar indicadores
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle('active', i === index);
+  });
+
+  // ✅ Atualizar links
+  const currentSlideEl = slides[index];
+  const githubLink = currentSlideEl.getAttribute('data-github');
+  const demoLink = currentSlideEl.getAttribute('data-demo');
+
+  document.querySelector('.project-github').href = githubLink;
+  document.querySelector('.project-demo').href = demoLink;
+
+  currentSlide = index;
+}
+
+
 
 // Configurar os indicadores
 indicators.forEach((indicator, index) => {
@@ -533,8 +550,5 @@ fileButtons.forEach(button => {
   });
 });
 
-// Remover as linhas duplicadas que estavam causando o problema
-// Não inicializar o terminal aqui, pois ele já é inicializado na função translatePage
-// que é chamada logo abaixo quando verificamos o idioma salvo
 
 });
