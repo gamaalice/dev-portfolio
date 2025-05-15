@@ -356,7 +356,7 @@ function showSlide(index) {
     indicator.classList.toggle('active', i === index);
   });
 
-  // ✅ Atualizar links
+  // Atualizar links do GitHub e Demo
   const currentSlideEl = slides[index];
   const githubLink = currentSlideEl.getAttribute('data-github');
   const demoLink = currentSlideEl.getAttribute('data-demo');
@@ -438,25 +438,9 @@ backToTopButton.addEventListener("click", () => {
   });
 });
 
-// Animações com ScrollReveal
-const sr = ScrollReveal({
-  origin: 'bottom',
-  distance: '60px',
-  duration: 1000,
-  delay: 200,
-  reset: false
-});
 
-sr.reveal('.section-title', {});
-sr.reveal('.about-text', { delay: 300 });
-sr.reveal('.about-image', { delay: 400 });
-sr.reveal('.skills-grid', { delay: 300 });
-sr.reveal('.slide', { interval: 200 });
-sr.reveal('.contact-container', { delay: 300 });
 
-// Configurar a alternância de arquivos no editor de código
-const fileButtons = document.querySelectorAll('.sidebar .file');
-const codeContent = document.getElementById('code-content');
+
 
 const codeFiles = {
   script: `
