@@ -339,21 +339,9 @@ const translations: Record<Language, Translation> = {
     },
   },
 }
-
-const [scrollProgress, setScrollProgress] = useState(0)
-
-useEffect(() => {
-  const handleScroll = () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-    const progress = (window.scrollY / totalHeight) * 100
-    setScrollProgress(progress)
-  }
-  window.addEventListener("scroll", handleScroll)
-  return () => window.removeEventListener("scroll", handleScroll)
-}, [])
-
 export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [scrollProgress, setScrollProgress] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [language, setLanguage] = useState<Language>("pt")
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({})
@@ -367,6 +355,16 @@ export default function Portfolio() {
     }
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
+
+   useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = (window.scrollY / totalHeight) * 100
+      setScrollProgress(progress)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
