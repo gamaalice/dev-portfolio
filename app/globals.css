@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Using only the provided palette colors */
+ 
   --background: #f5ebfa;
   --foreground: #1a1a1a;
   --card: #ffffff;
@@ -135,7 +135,7 @@
     }
   }
 
-  /* Gradient animation using ONLY palette colors - no black! */
+
   @keyframes gradient {
     0% {
       background-position: 0% 50%;

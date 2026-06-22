@@ -1,12 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type ReactNode } from "react"
 import {
   Github,
   Linkedin,
   Mail,
   ArrowRight,
-  ExternalLink,
   Menu,
   X,
   Languages,
@@ -120,7 +119,7 @@ const translations: Record<Language, Translation> = {
       contact: "Contato",
     },
     hero: {
-      badge: "Engenheira de Software Junior",
+      badge: "Engenheira de Software",
       name: "Alice Gama",
       title: "Software Engineer",
       description: "Transformando complexidade em funcionalidade através de arquitetura sólida e inovação",
@@ -130,7 +129,7 @@ const translations: Record<Language, Translation> = {
     about: {
       title: "Sobre",
       titleHighlight: "Mim",
-      p1: "Sou Engenheira de Software Júnior orientada pela busca constante por eficiência, para melhor na arquitetura, fluxos, decisões, processos e conexões de sistemas.",
+      p1: "Sou Engenheira de Software orientada pela busca constante por eficiência, para melhor na arquitetura, fluxos, decisões, processos e conexões de sistemas.",
       p2: "Meu foco se desenvolve na interseção entre desenvolvimento, automação e análise, construindo uma base sólida para atuar em ambientes que exigem precisão e clareza estrutural.",
       p3: "Venho me especializando cada vez mais em tecnologias como React, Next.js, JavaScript, TypeScript e Node, ao mesmo tempo em que aprofundo meu domínio em Python para automação, integração e tratamento de dados.",
       p4: "Essa combinação me permite transitar entre camadas, unindo engenharia de software, validação técnica e qualidade em um processo único com o objetivo de construir soluções robustas, bem estruturadas e sustentáveis.",
@@ -138,7 +137,6 @@ const translations: Record<Language, Translation> = {
       p6: "Sigo evoluindo como profissional com a intenção de construir soluções robustas, bem estruturadas e sustentáveis, sempre guiada por uma visão de engenharia que privilegia lógica, precisão e propósito.",
       quote: "Para mim, engenharia é a arte de transformar complexidade em funcionalidade.",
     },
-
     education: {
       sectionTitle: "Educação",
       items: [
@@ -154,6 +152,12 @@ const translations: Record<Language, Translation> = {
           period: "2025",
           description: "",
         },
+          {
+      degree: "Gestão de Projetos",
+      university: "LabProject PMO",
+      period: "2026",
+      description: "",
+    },
       ],
     },
     projects: {
@@ -235,7 +239,7 @@ const translations: Record<Language, Translation> = {
       contact: "Contact",
     },
     hero: {
-      badge: "Junior Software Engineer",
+      badge: "Software Engineer",
       name: "Alice Gama",
       title: "Software Engineer",
       description: "Transforming complexity into functionality through solid architecture and innovation",
@@ -245,7 +249,7 @@ const translations: Record<Language, Translation> = {
     about: {
       title: "About",
       titleHighlight: "Me",
-      p1: "I am a Junior Software Engineer driven by a constant pursuit of efficiency, aiming to improve architecture, workflows, decisions, processes, and system connections.",
+      p1: "I am a Software Engineer driven by a constant pursuit of efficiency, aiming to improve architecture, workflows, decisions, processes, and system connections.",
       p2: "My focus develops at the intersection of development, automation, and analysis, building a solid foundation to work in environments that demand precision and structural clarity.",
       p3: "I have been increasingly specializing in technologies such as React, Next.js, JavaScript, TypeScript, and Node, while deepening my expertise in Python for automation, integration, and data processing.",
       p4: "This combination allows me to move across layers, bringing together software engineering, technical validation, and quality in a unified process with the goal of building robust, well-structured, and sustainable solutions.",
@@ -268,6 +272,12 @@ const translations: Record<Language, Translation> = {
           period: "2025",
           description: "",
         },
+                {
+      degree: "Project Management",
+      university: "LabProject PMO",
+      period: "2026",
+      description: "",
+    },
       ],
     },
     projects: {
@@ -339,8 +349,34 @@ const translations: Record<Language, Translation> = {
     },
   },
 }
+
+type Skill = {
+  name: string
+  icon?: ReactNode
+}
+
+function SkillBadge({ name, icon }: Skill) {
+  const fallback = name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase()
+
+  return (
+    <div className="flex min-h-12 w-full min-w-0 items-center gap-3 rounded-xl border border-white/40 bg-white/45 px-3 py-2 shadow-sm transition-transform duration-300 hover:scale-[1.03]">
+      <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center text-xl text-primary">
+        {icon || <span className="text-xs font-bold tracking-tight">{fallback}</span>}
+      </span>
+
+      <span className="min-w-0 break-words text-sm sm:text-base font-medium leading-snug text-card-foreground">
+        {name}
+      </span>
+    </div>
+  )
+}
+
 export default function Portfolio() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [scrollProgress, setScrollProgress] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [language, setLanguage] = useState<Language>("pt")
@@ -349,22 +385,33 @@ export default function Portfolio() {
 
   const t = translations[language]
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  const glassCard = "bg-white/70 border border-white/50 shadow-xl shadow-primary/10"
 
-   useEffect(() => {
-    const handleScroll = () => {
+  useEffect(() => {
+    let frameId: number | null = null
+
+    const updateScrollProgress = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = (window.scrollY / totalHeight) * 100
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0
       setScrollProgress(progress)
+      frameId = null
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    const handleScroll = () => {
+      if (frameId === null) {
+        frameId = window.requestAnimationFrame(updateScrollProgress)
+      }
+    }
+
+    updateScrollProgress()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId)
+      }
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   useEffect(() => {
@@ -464,17 +511,19 @@ export default function Portfolio() {
             <p className="text-center text-muted-foreground mb-10 text-lg">
               Select your language | Selecione seu idioma
             </p>
+
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => selectLanguage("en")}
-                className="px-8 py-5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3"
+                className="px-8 py-5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer"
               >
                 <Languages className="w-6 h-6" />
                 English
               </button>
+
               <button
                 onClick={() => selectLanguage("pt")}
-                className="px-8 py-5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3"
+                className="px-8 py-5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer"
               >
                 <Languages className="w-6 h-6" />
                 Português
@@ -484,31 +533,26 @@ export default function Portfolio() {
         </div>
       )}
 
-      <div className="fixed inset-0 bg-[#E7DBEF] pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_30%_20%,_#49225B_0%,_transparent_50%)] pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_70%_60%,_#49225B_0%,_transparent_40%)] pointer-events-none" />
-      <div className="fixed inset-0 bg-[linear-gradient(to top,_#49225B_0%,_transparent_60%)] pointer-events-none" />
-
       <div
-        className="fixed inset-0 opacity-30 pointer-events-none transition-opacity duration-300"
+        className="fixed inset-0 pointer-events-none [contain:paint]"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(165, 106, 189, 0.08), transparent 60%)`,
+          background:
+            "radial-gradient(circle at 30% 20%, rgba(73, 34, 91, 0.9) 0%, transparent 42%), radial-gradient(circle at 70% 60%, rgba(73, 34, 91, 0.82) 0%, transparent 36%), linear-gradient(to top, rgba(73, 34, 91, 0.95) 0%, transparent 58%), #E7DBEF",
         }}
       />
 
-      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-card/80 border-b border-border">
-       <div
-  className="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary z-[60] transition-all duration-100"
-  style={{ width: `${scrollProgress}%` }}
-/>
+        <div
+          className="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary z-[60] transition-all duration-100"
+          style={{ width: `${scrollProgress}%` }}
+        />
+
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               AG
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#home" className="text-lg hover:text-primary transition-colors">
                 {t.nav.home}
@@ -530,16 +574,16 @@ export default function Portfolio() {
               </a>
             </div>
 
-            {/* Social Links & Language Toggle */}
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors text-md font-large"
+                className="flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors text-md font-large cursor-pointer"
                 aria-label="Toggle language"
               >
                 <Languages className="w-4 h-4" />
                 <span>{language === "pt" ? "EN" : "PT"}</span>
               </button>
+
               <a
                 href="https://github.com/gamaalice"
                 target="_blank"
@@ -549,6 +593,7 @@ export default function Portfolio() {
               >
                 <Github className="w-6 h-6" />
               </a>
+
               <a
                 href="https://linkedin.com/in/alice-gama-75913022a"
                 target="_blank"
@@ -560,69 +605,74 @@ export default function Portfolio() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden hover:text-primary transition-colors"
+              className="md:hidden hover:text-primary transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
               <a
                 href="#home"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.home}
               </a>
+
               <a
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.about}
               </a>
+
               <a
                 href="#education"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.education}
               </a>
+
               <a
                 href="#projects"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.projects}
               </a>
+
               <a
                 href="#skills"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.skills}
               </a>
+
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className=" text-lg hover:text-primary transition-colors"
+                className="text-lg hover:text-primary transition-colors"
               >
                 {t.nav.contact}
               </a>
+
               <div className="flex items-center gap-4 pt-2">
                 <button
                   onClick={toggleLanguage}
-                  className="flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 text-primary text-lg font-medium"
+                  className="flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 text-primary text-lg font-medium cursor-pointer"
                 >
                   <Languages className="w-4 h-4" />
                   <span>{language === "pt" ? "EN" : "PT"}</span>
                 </button>
+
                 <a
                   href="https://github.com/gamaalice"
                   target="_blank"
@@ -631,6 +681,7 @@ export default function Portfolio() {
                 >
                   <Github className="w-5 h-5" />
                 </a>
+
                 <a
                   href="https://linkedin.com/in/alice-gama-75913022a"
                   target="_blank"
@@ -645,22 +696,24 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 relative">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-lg font-medium mb-4 animate-fadeIn">
               {t.hero.badge}
             </div>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight animate-fadeIn">
+
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight leading-[1.12] animate-fadeIn">
               <span className="block text-balance">{t.hero.name}</span>
-              <span className="block bg-gradient-to-r from-[#f0d4ff] via-[#ffffff] to-[#fde8ff] bg-clip-text text-transparent animate-gradient text-balance drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
+              <span className="block pb-3 bg-gradient-to-r from-[#f0d4ff] via-[#ffffff] to-[#fde8ff] bg-clip-text text-transparent animate-gradient text-balance drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
                 {t.hero.title}
               </span>
             </h1>
+
             <p className="text-lg sm:text-xl md:text-2xl text-black max-w-2xl mx-auto leading-relaxed text-pretty animate-fadeIn">
               {t.hero.description}
             </p>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 animate-fadeIn">
               <a
                 href="#projects"
@@ -669,6 +722,7 @@ export default function Portfolio() {
                 {t.hero.cta1}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
+
               <a
                 href="#contact"
                 className="px-8 py-4 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300"
@@ -680,22 +734,22 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
       <section
         id="about"
-        className={`py-32 px-6 relative transition-all duration-1000 ${isVisible.about ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        className={`py-32 px-6 relative transition-all duration-1000 ${
+          isVisible.about ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16 text-black">
-            {" "}
-            {t.about.title} {t.about.titleHighlight}{" "}
+            {t.about.title} {t.about.titleHighlight}
           </h2>
 
           <div className="space-y-12">
-            {/* Main about text first */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 rounded-3xl blur-3xl" />
-              <div className="relative p-10 rounded-3xl bg-card/80 backdrop-blur-sm border border-border shadow-xl">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/25 via-accent/10 to-primary/10" />
+
+              <div className={`relative rounded-3xl p-6 sm:p-10 ${glassCard}`}>
                 <div className="grid md:grid-cols-2 gap-6 text-lg leading-relaxed">
                   <p className="text-foreground/90">{t.about.p1}</p>
                   <p className="text-foreground/90">{t.about.p2}</p>
@@ -710,51 +764,60 @@ export default function Portfolio() {
                 </blockquote>
               </div>
             </div>
-            {/* Then the 3 cards */}
+
             <div className="grid md:grid-cols-3 gap-6">
-              {/* Intercâmbio */}
-              <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+              <div
+                className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 ${glassCard}`}
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <FaGlobeAmericas className="text-2xl text-primary" />
                   </div>
+
                   <h3 className="text-xl font-bold text-primary">
                     {language === "pt" ? "Intercâmbio" : "Exchange Program"}
                   </h3>
                 </div>
-                <p className=" text-lg text-muted-foreground leading-relaxed">
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {language === "pt"
                     ? "Em 2025, vivenciei uma imersão internacional nos Estados Unidos, Canadá e México, que aprimorou minha adaptabilidade, comunicação e capacidade de atuar em ambientes multiculturais. Possuo proficiência intermediária em Inglês e Espanhol."
                     : "In 2025, I experienced an international immersion in the United States, Canada, and Mexico, which enhanced my adaptability, communication, and ability to work in multicultural environments. I hold intermediate proficiency in English and Spanish."}
                 </p>
               </div>
 
-              {/* Gestão de Projeto */}
-              <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:shadow-lg hover:shadow-secondary/10 transition-all duration-300">
+              <div
+                className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/15 ${glassCard}`}
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                     <FaTasks className="text-2xl text-secondary" />
                   </div>
+
                   <h3 className="text-xl font-bold text-secondary">
                     {language === "pt" ? "Gestão de Projeto" : "Project Management"}
                   </h3>
                 </div>
-                <p className=" text-lg text-muted-foreground leading-relaxed">
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {language === "pt"
                     ? "Aplico metodologias ágeis no ciclo de desenvolvimento, estruturando projetos em sprints, decompondo escopo em incrementos funcionais e gerenciando backlog com priorização baseada em valor. Planejo entregas com controle de riscos, rastreabilidade e critérios de aceitação bem definidos, garantindo previsibilidade e qualidade em cada fase do desenvolvimento."
                     : "I apply agile methodologies throughout the development cycle,  structuring projects into sprints, decomposing scope into functional increments, and managing backlogs with value-based prioritization. I plan deliveries with risk control, traceability, and well-defined acceptance criteria, ensuring predictability and quality at every phase of development."}
                 </p>
               </div>
 
-              {/* Fullstack */}
-              <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
+              <div
+                className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/15 ${glassCard}`}
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                     <FaCode className="text-2xl text-accent" />
                   </div>
+
                   <h3 className="text-xl font-bold text-accent">{language === "pt" ? "Fullstack" : "Fullstack"}</h3>
                 </div>
-                <p className=" text-lg text-muted-foreground leading-relaxed">
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {language === "pt"
                     ? "Tenho proficiência avançada em frontend e venho expandindo minha atuação no backend com foco em automação de processos e integração de sistemas. Meu objetivo é dominar todas as camadas do desenvolvimento, entregando soluções completas e bem arquitetadas."
                     : "I have advanced proficiency in frontend development and I am expanding my backend expertise with a focus on process automation and system integration. My goal is to master every layer of development, delivering complete and well-architected solutions."}
@@ -765,7 +828,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Education Section */}
       <section
         id="education"
         className={`py-32 px-6 bg-muted/30 transition-all duration-1000 ${
@@ -774,30 +836,29 @@ export default function Portfolio() {
       >
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16 text-black">
-            {" "}
-            {t.education.sectionTitle}{" "}
+            {t.education.sectionTitle}
           </h2>
 
           <div className="space-y-8">
             {t.education.items.map((item, index) => (
               <div key={index} className="relative">
-                {/* Linha vertical contínua */}
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/30" />
-                {/* Ponto na linha */}
                 <div className="absolute left-0 top-0 w-2 h-2 rounded-full bg-primary -translate-x-[3px]" />
 
                 <div className="pl-8">
-                  <div className="p-8 rounded-2xl bg-card border border-border hover:shadow-xl transition-shadow duration-300">
+                  <div className={`p-8 rounded-2xl transition-shadow duration-300 hover:shadow-2xl ${glassCard}`}>
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <GraduationCap className="w-6 h-6 text-primary" />
                       </div>
+
                       <div>
                         <h3 className="text-2xl font-bold mb-1 text-card-foreground">{item.degree}</h3>
                         <p className="text-primary font-medium">{item.university}</p>
-                        <p className=" text-lg text-muted-foreground">{item.period}</p>
+                        <p className="text-lg text-muted-foreground">{item.period}</p>
                       </div>
                     </div>
+
                     <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                   </div>
                 </div>
@@ -807,64 +868,63 @@ export default function Portfolio() {
         </div>
       </section>
 
-
-      {/* Projects Section */}
       <section
         id="projects"
-        className={`py-32 px-6 transition-all duration-1000 ${isVisible.projects ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        className={`py-32 px-6 transition-all duration-1000 ${
+          isVisible.projects ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
       >
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16 text-black">
-            {" "}
-            {t.projects.title} {t.projects.titleHighlight}{" "}
+            {t.projects.title} {t.projects.titleHighlight}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.projects.items.map((project: any, index: number) => (
-              <div
+            {t.projects.items.map((project, index) => (
+              <a
                 key={index}
-                className="group overflow-hidden rounded-2xl bg-card border border-border hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+                href={projectLinks[index]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group block overflow-hidden rounded-2xl cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${glassCard}`}
+                aria-label={`${t.projects.viewProject}: ${project.title}`}
               >
-                <div className="aspect-video overflow-hidden bg-muted">
+                <div className="aspect-video overflow-hidden bg-muted/60">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 will-change-transform"
                   />
                 </div>
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">{project.title}</h3>
+
                   <p className="text-muted-foreground mb-4 leading-relaxed text-lg">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech: string, techIndex: number) => (
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium"
+                        className="px-3 py-1 rounded-full bg-white/45 border border-white/40 text-primary text-xs font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={projectLinks[index]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all text-lg"
-                  >
-                    {t.projects.viewProject}
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
       <section
         id="skills"
-        className={`py-32 px-6 transition-all duration-1000 ${isVisible.skills ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        className={`py-32 px-6 transition-all duration-1000 ${
+          isVisible.skills ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
       >
         <div className="container mx-auto max-w-7xl">
           <div className="container mx-auto max-w-7xl">
@@ -875,16 +935,14 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(techStack).map(([category, skills]) => (
-              <div key={category} className="p-8 rounded-2xl bg-card border border-border">
+              <div key={category} className={`p-6 sm:p-8 rounded-2xl ${glassCard}`}>
                 <h3 className="text-xl font-bold mb-6 text-primary">
                   {t.skills.categories[category as keyof typeof t.skills.categories]}
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(135px,1fr))] gap-3">
                   {skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="flex items-center gap-2 p-3 rounded-lg bg-muted/50">
-                      <span className="text-2xl hover:scale-125 transition-transform cursor-pointer">{skill.icon}</span>
-                      <span className=" text-lg font-medium text-card-foreground">{skill.name}</span>
-                    </div>
+                    <SkillBadge key={skillIndex} name={skill.name} icon={skill.icon} />
                   ))}
                 </div>
               </div>
@@ -893,10 +951,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section
         id="contact"
-        className={`py-32 px-6 bg-muted/30 transition-all duration-1000 ${isVisible.contact ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        className={`py-32 px-6 bg-muted/30 transition-all duration-1000 ${
+          isVisible.contact ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
       >
         <div className="container mx-auto max-w-4xl text-center">
           <div className="container mx-auto max-w-4xl text-center">
@@ -904,6 +963,7 @@ export default function Portfolio() {
               {t.contact.title} {t.contact.titleHighlight}
             </h2>
           </div>
+
           <p className="text-xl text-muted-foreground mb-12">{t.contact.description}</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -914,6 +974,7 @@ export default function Portfolio() {
               <Mail className="w-5 h-5" />
               Email
             </a>
+
             <a
               href="https://github.com/gamaalice"
               target="_blank"
@@ -923,6 +984,7 @@ export default function Portfolio() {
               <Github className="w-5 h-5" />
               {t.contact.github}
             </a>
+
             <a
               href="https://linkedin.com/in/alice-gama-75913022a"
               target="_blank"
@@ -936,12 +998,12 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border bg-card">
+      <footer className="py-8 px-6 border-t border-white/40 bg-white/60">
         <div className="container mx-auto text-center text-muted-foreground">
           <p>{t.footer.copyright}</p>
         </div>
       </footer>
+
       <div />
     </div>
   )
