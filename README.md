@@ -8,7 +8,7 @@ The application was designed with a modern, responsive, and accessible interface
 
 Access the portfolio online:
 
-[[Click here!](https://dev-portfolio-two-lovat-95.vercel.app/)]
+[Click here!](https://dev-portfolio-two-lovat-95.vercel.app/)]
 
 ---
 
