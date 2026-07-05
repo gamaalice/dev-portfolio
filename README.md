@@ -79,12 +79,6 @@ The project focuses on:
 
 ---
 
-**Production URL:**
-
- [Link](https://dev-portfolio-two-lovat-95.vercel.app/)
-
----
-
 ## Contact
 
 To see other projects, experience, and professional information, visit my profiles:
