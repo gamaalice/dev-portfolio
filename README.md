@@ -15,8 +15,11 @@
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)
 
 </p>
-
-[Portfolio: View Live Website](https://dev-portfolio-two-lovat-95.vercel.app/)
+<p align="center">
+  <a href="https://dev-portfolio-two-lovat-95.vercel.app/">
+    Portfolio: View Live Website
+  </a>
+</p>
 
 ---
 
