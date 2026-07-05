@@ -1,8 +1,0 @@
-1:"$Sreact.fragment"
-2:I[29260,["/_next/static/chunks/39a4c2a087e48cba.js"],"ViewportBoundary"]
-4:I[29260,["/_next/static/chunks/39a4c2a087e48cba.js"],"MetadataBoundary"]
-5:"$Sreact.suspense"
-7:I[35894,["/_next/static/chunks/39a4c2a087e48cba.js"],"IconMark"]
-0:{"buildId":"wi_-jOCSFDZvXofuDeqfZ","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
-3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:[["$","title","0",{"children":"Alice Gama | Portfolio"}],["$","meta","1",{"name":"description","content":"Portfolio website for Alice Gama"}],["$","link","2",{"rel":"shortcut icon","href":"/favicon/favicon-16x16.png"}],["$","link","3",{"rel":"icon","href":"/favicon/favicon-32x32.png"}],["$","link","4",{"rel":"apple-touch-icon","href":"/favicon/apple-touch-icon.png"}],["$","$L7","5",{}]]

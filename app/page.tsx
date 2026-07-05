@@ -191,13 +191,13 @@ const translations: Record<Language, Translation> = {
           tech: ["Next.js", "React", "TypeScript"],
           image: "/assets/loginstyles2.png",
         },
-        {
-          title: "Virtual Assistant - WhatsApp Bot",
-          description:
-            "O Chatbot é um assistente virtual automatizado para WhatsApp. Ele oferece um atendimento ao cliente rápido. O bot registra todas as interações como leads em um banco de dados SQLite local e pode integrar-se a CRMs externos.",
-          tech: ["JavaScript", " SQLite"],
-          image: "/assets/chatbot.png",
-        },
+      {
+  title: "Lunara - Freelancer Management App",
+  description:
+    "Aplicação de gestão para freelancers com clientes, projetos, tarefas, finanças e prazos em um único ambiente. Desenvolvida com autenticação, banco de dados real, isolamento por usuário, PWA e versão desktop com Tauri.",
+  tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase", "Firestore", "Tauri"],
+  image: "/assets/lunara.png",
+},
         {
           title: "Tower Blocks Game",
           description: "Jogo de blocos em estilo torre com interface moderna e animações suaves.",
@@ -310,13 +310,13 @@ const translations: Record<Language, Translation> = {
           tech: ["Next.js", "React", "TypeScript"],
           image: "/assets/loginstyles2.png",
         },
-        {
-          title: "Virtual Assistant - WhatsApp Bot",
-          description:
-            "The chatbot is an automated virtual assistant for WhatsApp. It provides fast customer service. The bot records all interactions as leads in a local SQLite database and can integrate with external CRMs.",
-          tech: ["JavaScript", "SQLite"],
-          image: "/assets/chatbot.png",
-        },
+       {
+  title: "Lunara - Freelancer Management App",
+  description:
+    "A freelancer management app that centralizes clients, projects, tasks, finances, and deadlines in one workspace. Built with authentication, real database persistence, user-based data isolation, PWA support, and a desktop version with Tauri.",
+  tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase", "Firestore", "Tauri"],
+  image: "/assets/lunara.png",
+},
         {
           title: "Tower Blocks Game",
           description: "Tower-style block game with modern interface and smooth animations.",
@@ -462,7 +462,7 @@ export default function Portfolio() {
     "https://cryptodashbord-wine.vercel.app/",
     "https://github.com/gamaalice/socialbutton",
     "https://github.com/gamaalice/modern-login",
-    "https://github.com/gamaalice/chatbot",
+    "https://github.com/gamaalice/Lunara-App",
     "https://github.com/gamaalice/towerblocks",
   ]
 
@@ -968,7 +968,7 @@ export default function Portfolio() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="mailto:gamaalice10@gmail.com"
+              href="mailto:alicegamas.dev@gmail.com"
               className="group px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium flex items-center gap-2 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
