@@ -20,11 +20,7 @@
 
 ## Live Website
 
-<p align="center">
-  <a href="https://dev-portfolio-two-lovat-95.vercel.app/">
-    <strong>View Live Portfolio →</strong>
-  </a>
-</p>
+[Click Here](https://dev-portfolio-two-lovat-95.vercel.app/)
 
 ---
 
