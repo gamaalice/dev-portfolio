@@ -1,105 +1,95 @@
-# Alice Gama | Portfolio
+# Alice Gama | Developer Portfolio
 
-Personal portfolio developed to showcase projects, technical skills, education, and professional background in Software Engineering.
+<p align="center">
+  Personal portfolio built with modern frontend technologies, focused on performance,
+  responsive design, accessibility and multilingual experience.
+</p>
 
-The application was designed with a modern, responsive, and accessible interface, focusing on performance, usability, and clean visual presentation. The project supports both Portuguese and English through a built-in language switcher and is automatically deployed through Vercel.
+<p align="center">
 
-## Live Demo
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind](https://img.shields.io/badge/Tailwind-v4-38BDF8)
+![shadcn/ui](https://img.shields.io/badge/shadcn-ui-black)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)
 
-Access the portfolio online:
-
-[Click here!](https://dev-portfolio-two-lovat-95.vercel.app/)]
-
----
-
-## About the Project
-
-This portfolio serves as a central hub for presenting:
-
-* Featured software development projects
-* Technical skills and technologies
-* Academic background
-* Professional profile
-* Contact information and social links
-
-The design emphasizes clarity, responsiveness, and a strong visual identity while maintaining performance and accessibility standards.
+</p>
 
 ---
 
-## Technologies
+## Live Website
 
-### Frontend
-
-* Next.js
-* React
-* TypeScript
-* Tailwind CSS
-
-### UI & Icons
-
-* Lucide React
-* React Icons
-
-### Deployment
-
-* Vercel
-
-### Version Control
-
-* Git
-* GitHub
+**Portfolio:** https://dev-portfolio-two-lovat-95.vercel.app/
 
 ---
 
-## Features
+## Overview
 
-### Responsive Design
+This portfolio was designed and developed to showcase my professional experience, technical skills, featured projects, education, and software engineering journey.
 
-Optimized for desktop, tablet, and mobile devices.
+The project focuses on:
 
-### Multi-Language Support
+- Responsive design
+- Multilingual support
+- Modern frontend architecture
+- User experience
+- Performance optimization
+- Accessibility
+- Interactive animations
 
-* Portuguese
-* English
+---
 
-Language preference is stored locally for future visits.
+## Project Highlights
 
-### Project Showcase
+| Feature | Description |
+|---------|-------------|
+| Responsive Design | Optimized for desktop, tablet and mobile |
+| Multilingual | Portuguese and English support |
+| Theme System | Custom design system |
+| Project Showcase | Interactive portfolio section |
+| Skills Dashboard | Organized technical stack |
+| Education Timeline | Academic and professional journey |
+| Animations | Scroll animations and transitions |
+| Navigation | Smooth scrolling and progress indicator |
 
-Dedicated section highlighting selected projects, including:
+---
 
-* Description
-* Technologies used
-* Direct access to repositories and live applications
+## Tech Stack
 
-### Technical Skills Section
+| Frontend | Styling | UI | Other |
+|---|---|---|---|
+| Next.js | Tailwind CSS v4 | shadcn/ui | Vercel |
+| React | CSS Variables | Lucide React | LocalStorage |
+| TypeScript | Responsive Design | React Icons | i18n |
 
-Organized by categories:
+---
 
-* Languages
-* Frameworks
-* Libraries
-* Tools
-* Databases
+## Main Sections and Screenshot
 
-### Professional Presentation
+> Coming soon.
 
-Sections dedicated to:
+## Performance Goals
 
-* Professional summary
-* Education
-* Technical expertise
-* Contact channels
+- Responsive Design
+- Accessibility
+- Maintainability
+- Performance
+- Scalability
+- User Experience
 
-### Automatic Deployment
+---
 
-Continuous deployment through GitHub and Vercel integration.
+**Production URL:**
+
+https://dev-portfolio-two-lovat-95.vercel.app/
+
+---
 
 ## Author
 
-Alice Gama
+**Alice Gama**
 
-Software Engineering Student
-
-GitHub:
-https://github.com/gamaalice
+- Portfolio: https://dev-portfolio-two-lovat-95.vercel.app/
+- GitHub: https://github.com/gamaalice
+- LinkedIn: https://linkedin.com/in/alice-gama-75913022a
