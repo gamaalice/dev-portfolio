@@ -81,14 +81,16 @@ The project focuses on:
 
 **Production URL:**
 
-https://dev-portfolio-two-lovat-95.vercel.app/
+ [Link](https://dev-portfolio-two-lovat-95.vercel.app/)
 
 ---
 
-## Author
+## Contact
 
-**Alice Gama**
+To see other projects, experience, and professional information, visit my profiles:
 
-- Portfolio: https://dev-portfolio-two-lovat-95.vercel.app/
-- GitHub: https://github.com/gamaalice
-- LinkedIn: https://linkedin.com/in/alice-gama-75913022a
+LinkedIn: [Alice Gama](https://www.linkedin.com/in/alice-gama-75913022a/)
+
+Portfolio: [Portfolio Website](https://dev-portfolio-two-lovat-95.vercel.app/)
+
+GitHub: [gamaalice](https://github.com/gamaalice)
