@@ -63,15 +63,51 @@ export const metadata: Metadata = {
   },
 };
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alice Gama",
+  "jobTitle": "Front-End Developer",
+  "url": "https://dev-portfolio-two-lovat-95.vercel.app/",
+  "description":
+    "Front-End Developer specializing in React, Next.js, TypeScript, JavaScript, HTML, CSS and modern web interfaces.",
+  "sameAs": [
+    "https://github.com/gamaalice",
+    "https://www.linkedin.com/in/alice-gama-75913022a/"
+  ],
+  "knowsAbout": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "UI/UX",
+    "Web Accessibility"
+  ]
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className="font-sans antialiased">
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+
         {children}
+
       </body>
     </html>
   );
