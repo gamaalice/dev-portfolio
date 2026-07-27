@@ -458,13 +458,31 @@ export default function Portfolio() {
   }
 
   const projectLinks = [
-    "https://github.com/gamaalice/budgetpersonal",
-    "https://cryptodashbord-wine.vercel.app/",
-    "https://github.com/gamaalice/socialbutton",
-    "https://github.com/gamaalice/modern-login",
-    "https://github.com/gamaalice/Lunara-App",
-    "https://github.com/gamaalice/towerblocks",
-  ]
+  {
+    site: "",
+    github: "https://github.com/gamaalice/budgetpersonal",
+  },
+  {
+    site: "https://cryptodashbord-wine.vercel.app/",
+    github: "https://github.com/gamaalice/cryptodashbord",
+  },
+  {
+    site: "https://gamaalice.github.io/socialbutton/",
+    github: "https://github.com/gamaalice/socialbutton",
+  },
+  {
+    site: "",
+    github: "https://github.com/gamaalice/modern-login",
+  },
+  {
+    site: "https://app-lunara.vercel.app/login",
+    github: "https://github.com/gamaalice/Lunara-App",
+  },
+  {
+    site: "https://gamaalice.github.io/towerblocks/",
+    github: "https://github.com/gamaalice/towerblocks",
+  },
+]
 
   const techStack = {
     languages: [
@@ -879,43 +897,166 @@ export default function Portfolio() {
             {t.projects.title} {t.projects.titleHighlight}
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.projects.items.map((project, index) => (
-              <a
-                key={index}
-                href={projectLinks[index]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group block overflow-hidden rounded-2xl cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${glassCard}`}
-                aria-label={`${t.projects.viewProject}: ${project.title}`}
-              >
-                <div className="aspect-video overflow-hidden bg-muted/60">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 will-change-transform"
-                  />
-                </div>
+         <div className="grid lg:grid-cols-2 gap-12">
+     {t.projects.items.map((project, index) => (
+  <div
+    key={index}
+    className={`
+      group
+      overflow-hidden
+      rounded-[28px]
+      cursor-pointer
+      transition-all
+      duration-500
+      hover:shadow-2xl
+      hover:shadow-primary/30
+      ${glassCard}
+    `}
+  >
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">{project.title}</h3>
+    {/* IMAGEM DO PROJETO */}
+  <div className="relative aspect-[16/9] overflow-hidden bg-muted/60">
 
-                  <p className="text-muted-foreground mb-4 leading-relaxed text-lg">{project.description}</p>
+      <img
+        src={project.image || "/placeholder.svg"}
+        alt={project.title}
+        loading="lazy"
+        className="
+          w-full
+          h-full
+          object-cover
+          transition-transform
+          duration-700
+          group-hover:scale-110
+        "
+      />
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 rounded-full bg-white/45 border border-white/40 text-primary text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ))}
+
+      {/* OVERLAY DOS BOTÕES */}
+      <div
+        className="
+          absolute
+          inset-0
+          flex
+          items-center
+          justify-center
+          gap-5
+          bg-black/60
+          backdrop-blur-sm
+          opacity-0
+          group-hover:opacity-100
+          transition-all
+          duration-500
+        "
+      >
+
+        {projectLinks[index].site && (
+          <a
+            href={projectLinks[index].site}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-7
+              py-3
+              rounded-full
+              bg-primary
+              text-white
+              font-semibold
+              text-sm
+              shadow-xl
+              hover:scale-105
+              transition-transform
+            "
+          >
+            Ver Site
+          </a>
+        )}
+
+
+        <a
+          href={projectLinks[index].github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            px-7
+            py-3
+            rounded-full
+            bg-white/10
+            border
+            border-white/80
+            text-white
+            font-semibold
+            text-sm
+            backdrop-blur-md
+            shadow-xl
+            hover:bg-white
+            hover:text-black
+            hover:scale-105
+            transition-all
+          "
+        >
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+
+    {/* INFORMAÇÕES */}
+    <div className="p-8">
+
+      <h3
+        className="
+          text-2xl
+          font-bold
+          mb-3
+          text-card-foreground
+        "
+      >
+        {project.title}
+      </h3>
+
+
+      <p
+        className="
+          text-muted-foreground
+          mb-6
+          leading-relaxed
+          text-base
+        "
+      >
+        {project.description}
+      </p>
+
+
+      <div className="flex flex-wrap gap-2">
+
+        {project.tech.map((tech, techIndex) => (
+          <span
+            key={techIndex}
+            className="
+              px-4
+              py-2
+              rounded-full
+              bg-white/45
+              border
+              border-white/40
+              text-primary
+              text-sm
+              font-medium
+            "
+          >
+            {tech}
+          </span>
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+))}
           </div>
         </div>
       </section>
