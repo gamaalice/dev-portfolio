@@ -119,9 +119,9 @@ const translations: Record<Language, Translation> = {
       contact: "Contato",
     },
     hero: {
-      badge: "Engenheira de Software",
+      badge: "Desenvolvedora de Front-End",
       name: "Alice Gama",
-      title: "Software Engineer",
+      title: "Front-End Developer",
       description: "Transformando complexidade em funcionalidade através de arquitetura sólida e inovação",
       cta1: "Ver Projetos",
       cta2: "Contato",
@@ -129,7 +129,7 @@ const translations: Record<Language, Translation> = {
     about: {
       title: "Sobre",
       titleHighlight: "Mim",
-      p1: "Sou Engenheira de Software orientada pela busca constante por eficiência, para melhor na arquitetura, fluxos, decisões, processos e conexões de sistemas.",
+      p1: "Sou Desenvolvedora Front-End orientada pela busca constante por eficiência, para melhor na arquitetura, fluxos, decisões, processos e conexões de sistemas.",
       p2: "Meu foco se desenvolve na interseção entre desenvolvimento, automação e análise, construindo uma base sólida para atuar em ambientes que exigem precisão e clareza estrutural.",
       p3: "Venho me especializando cada vez mais em tecnologias como React, Next.js, JavaScript, TypeScript e Node, ao mesmo tempo em que aprofundo meu domínio em Python para automação, integração e tratamento de dados.",
       p4: "Essa combinação me permite transitar entre camadas, unindo engenharia de software, validação técnica e qualidade em um processo único com o objetivo de construir soluções robustas, bem estruturadas e sustentáveis.",
@@ -239,9 +239,9 @@ const translations: Record<Language, Translation> = {
       contact: "Contact",
     },
     hero: {
-      badge: "Software Engineer",
+      badge: "Front-End Developer",
       name: "Alice Gama",
-      title: "Software Engineer",
+      title: "Front-End Developer",
       description: "Transforming complexity into functionality through solid architecture and innovation",
       cta1: "View Projects",
       cta2: "Contact",
@@ -249,7 +249,7 @@ const translations: Record<Language, Translation> = {
     about: {
       title: "About",
       titleHighlight: "Me",
-      p1: "I am a Software Engineer driven by a constant pursuit of efficiency, aiming to improve architecture, workflows, decisions, processes, and system connections.",
+      p1: "I am a Front-End Developer driven by a constant pursuit of efficiency, aiming to improve architecture, workflows, decisions, processes, and system connections.",
       p2: "My focus develops at the intersection of development, automation, and analysis, building a solid foundation to work in environments that demand precision and structural clarity.",
       p3: "I have been increasingly specializing in technologies such as React, Next.js, JavaScript, TypeScript, and Node, while deepening my expertise in Python for automation, integration, and data processing.",
       p4: "This combination allows me to move across layers, bringing together software engineering, technical validation, and quality in a unified process with the goal of building robust, well-structured, and sustainable solutions.",
