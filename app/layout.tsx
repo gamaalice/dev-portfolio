@@ -6,14 +6,14 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alice Gama | Front-End Developer",
+  title: "Alice Gama | Full-Stack Developer",
   description:
-    "Portfolio of Alice Gama featuring Front-End projects built with modern web technologies.",
+    "Portfolio of Alice Gama featuring Full-Stack projects built with modern web technologies.",
 
   keywords: [
     "Alice Gama",
-    "Front-End Developer",
-    "Frontend Developer",
+    "Full-Stack Developer",
+    "Fullstack Developer",
     "React",
     "JavaScript",
     "TypeScript",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Alice Gama | Front-End Developer",
+    title: "Alice Gama | Full-Stack Developer",
     description:
-      "Portfolio of Alice Gama featuring Front-End projects built with modern web technologies.",
+      "Portfolio of Alice Gama featuring Full-Stack projects built with modern web technologies.",
     url: "https://dev-portfolio-two-lovat-95.vercel.app/",
     siteName: "Alice Gama Portfolio",
     locale: "en_US",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Alice Gama | Front-End Developer",
+    title: "Alice Gama | Full-Stack Developer",
     description:
-      "Portfolio of Alice Gama featuring Front-End projects.",
+      "Portfolio of Alice Gama featuring Full-Stack projects.",
   },
 
   icons: {
@@ -68,10 +68,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Alice Gama",
-  "jobTitle": "Front-End Developer",
+  "jobTitle": "Full-Stack Developer",
   "url": "https://dev-portfolio-two-lovat-95.vercel.app/",
   "description":
-    "Front-End Developer specializing in React, Next.js, TypeScript, JavaScript, HTML, CSS and modern web interfaces.",
+    "Full-Stack Developer specializing in React, Next.js, TypeScript, JavaScript, Node.js, Python and modern web applications.",
   "sameAs": [
     "https://github.com/gamaalice",
     "https://www.linkedin.com/in/alice-gama-75913022a/"
