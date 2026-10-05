@@ -94,7 +94,7 @@ export const translations: Record<Language, Translation> = {
           description: "",
         },
         {
-          degree: "Learn Figma for UI/UX Design (with a Design Project)",
+          degree: "Learn Figma for UI/UX Design",
           university: "Udemy",
           period: "2026",
           description: "",
@@ -143,8 +143,9 @@ export const translations: Record<Language, Translation> = {
       ],
 
       images: [
-        "/assets/ease/header.png",
         "/assets/ease/home.png",
+        "/assets/ease/header1.png",
+         "/assets/ease/header2.png",
         "/assets/ease/ouvidoria.png",
         "/assets/ease/projetos.png",
         "/assets/ease/sobre.png",
@@ -227,7 +228,13 @@ export const translations: Record<Language, Translation> = {
         "Resultados sem score final combinado",
       ],
 
-      images: [],
+      images: [
+ "/assets/job/9.png",
+        "/assets/job/10.png",
+        "/assets/job/11.png",
+        "/assets/job/12.png",
+
+      ],
 
       site: "",
       github: "https://github.com/gamaalice/scorer-skill",
@@ -487,8 +494,9 @@ carousel: {
         "Technical SEO and production readiness",
       ],
       images: [
-        "/assets/ease/header.png",
-        "/assets/ease/home.png",
+       "/assets/ease/home.png",
+        "/assets/ease/header1.png",
+         "/assets/ease/header2.png",
         "/assets/ease/ouvidoria.png",
         "/assets/ease/projetos.png",
         "/assets/ease/sobre.png",
@@ -562,7 +570,12 @@ carousel: {
         "Conditional external research",
         "Results without a combined final score",
       ],
-      images: [],
+      images: [
+        "/assets/job/9.png",
+        "/assets/job/10.png",
+        "/assets/job/11.png",
+        "/assets/job/12.png",
+      ],
       site: "",
       github: "https://github.com/gamaalice/scorer-skill",
     },
