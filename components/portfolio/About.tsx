@@ -1,6 +1,11 @@
-import { FaGlobeAmericas, FaTasks, FaCode } from "react-icons/fa"
+import {
+  FaGlobeAmericas,
+  FaLayerGroup,
+  FaProjectDiagram,
+} from "react-icons/fa"
 
 import { GLASS_CARD } from "@/types/portfolio"
+
 import type { Language, Translation } from "@/types/portfolio"
 
 type AboutProps = {
@@ -10,94 +15,179 @@ type AboutProps = {
 }
 
 export function About({ t, language, isVisible }: AboutProps) {
+  const subtitle =
+    language === "pt"
+      ? "Base em Front-end, expandindo para Full-Stack"
+      : "Front-end foundation, expanding into Full-Stack"
+
   return (
     <section
       id="about"
       className={`py-32 px-6 relative transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-10"
       }`}
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16 text-black">
-          {t.title} {t.titleHighlight}
-        </h2>
+        {/* Heading */}
+        <div className="mb-12">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black">
+            {t.title} {t.titleHighlight}
+          </h2>
+
+          <p className="mt-3 text-lg sm:text-xl font-medium text-muted-foreground">
+            {subtitle}
+          </p>
+        </div>
 
         <div className="space-y-12">
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/25 via-accent/10 to-primary/10" />
+          {/* Introduction + Current Focus */}
+          <div className="grid md:grid-cols-[1.5fr_0.9fr] gap-10 items-start">
+            {/* Introduction */}
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed text-foreground/90">
+                {t.p1}
+              </p>
 
-            <div className={`relative rounded-3xl p-6 sm:p-10 ${GLASS_CARD}`}>
-              <div className="grid md:grid-cols-2 gap-6 text-lg leading-relaxed">
-                <p className="text-foreground/90">{t.p1}</p>
-                <p className="text-foreground/90">{t.p2}</p>
-                <p className="text-foreground/90">{t.p3}</p>
-                <p className="text-foreground/90">{t.p4}</p>
-              </div>
-
-              <blockquote className="border-l-4 border-primary pl-6 py-4 italic text-lg text-primary mt-8 bg-primary/5 rounded-r-lg">
-                {t.quote}
-              </blockquote>
+              <p className="text-lg leading-relaxed text-foreground/90">
+                {t.p2}
+              </p>
             </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div
-              className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 ${GLASS_CARD}`}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <FaGlobeAmericas className="text-2xl text-primary" />
+            {/* Current Focus */}
+            <div className={`rounded-3xl p-6 sm:p-7 ${GLASS_CARD}`}>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <FaLayerGroup className="text-xl text-primary" />
                 </div>
 
                 <h3 className="text-xl font-bold text-primary">
-                  {language === "pt" ? "Intercâmbio" : "Exchange Program"}
+                  {t.focus.title}
                 </h3>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {language === "pt"
-                  ? "Em 2025, vivenciei uma imersão internacional nos Estados Unidos, Canadá e México, que aprimorou minha adaptabilidade, comunicação e capacidade de atuar em ambientes multiculturais. Possuo proficiência intermediária em Inglês e Espanhol."
-                  : "In 2025, I experienced an international immersion in the United States, Canada, and Mexico, which enhanced my adaptability, communication, and ability to work in multicultural environments. I hold intermediate proficiency in English and Spanish."}
+              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+                {t.focus.text}
               </p>
+
+              {/* International Experience */}
+              <div className="mt-6 pt-5 border-t border-border">
+                <div className="flex items-center gap-2 mb-3">
+                  <FaGlobeAmericas className="text-primary" />
+
+                  <span className="text-sm font-semibold text-foreground">
+                    {t.international.title}
+                  </span>
+                </div>
+
+                <div className="inline-flex flex-wrap gap-2">
+                  {t.international.text
+                    .split("·")
+                    .map((item, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1.5 rounded-full bg-background/60 border border-border text-sm text-muted-foreground"
+                      >
+                        {item.trim()}
+                      </span>
+                    ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Expertise */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Front-end */}
+            <div
+              className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 ${GLASS_CARD}`}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <FaLayerGroup className="text-2xl text-primary" />
+                </div>
+
+                <h3 className="text-xl font-bold text-primary">
+                  {t.expertise.frontend.title}
+                </h3>
+              </div>
+
+              <ul className="space-y-3">
+                {t.expertise.frontend.items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex gap-3 text-muted-foreground leading-relaxed"
+                  >
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
+            {/* Software Engineering */}
             <div
-              className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/15 ${GLASS_CARD}`}
+              className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/15 ${GLASS_CARD}`}
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <FaTasks className="text-2xl text-secondary" />
+                  <FaProjectDiagram className="text-2xl text-secondary" />
                 </div>
 
                 <h3 className="text-xl font-bold text-secondary">
-                  {language === "pt" ? "Gestão de Projeto" : "Project Management"}
+                  {t.expertise.software.title}
                 </h3>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {language === "pt"
-                  ? "Aplico metodologias ágeis no ciclo de desenvolvimento, com noções de Kanban e Scrum, estruturando projetos em sprints, decompondo escopo em incrementos funcionais e gerenciando backlog com priorização baseada em valor. Estou buscando aprofundar isso formalmente, com foco em planejamento de entregas, controle de riscos e critérios de aceitação bem definidos."
-                  : "I apply agile methodologies throughout the development cycle, with a working knowledge of Kanban and Scrum, structuring projects into sprints, breaking scope into functional increments, and managing backlogs with value-based prioritization. I'm looking to deepen this formally, with a focus on delivery planning, risk control, and well-defined acceptance criteria."}
-              </p>
+              <ul className="space-y-3">
+                {t.expertise.software.items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex gap-3 text-muted-foreground leading-relaxed"
+                  >
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
+            {/* Planning */}
             <div
-              className={`p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/15 ${GLASS_CARD}`}
+              className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/15 ${GLASS_CARD}`}
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <FaCode className="text-2xl text-accent" />
+                  <FaProjectDiagram className="text-2xl text-accent" />
                 </div>
 
-                <h3 className="text-xl font-bold text-accent">{language === "pt" ? "Fullstack" : "Fullstack"}</h3>
+                <h3 className="text-xl font-bold text-accent">
+                  {t.expertise.planning.title}
+                </h3>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {language === "pt"
-                  ? "Atuo nas camadas de frontend e backend das minhas próprias soluções, entregando projetos completos, da interface à lógica de negócio e persistência de dados. É essa visão de ponta a ponta que estou expandindo agora para automação e integração com IA."
-                  : "I work across the frontend and backend layers of my own solutions, delivering complete projects from interface to business logic and data persistence. That end-to-end mindset is what I'm now expanding into automation and AI integration."}
-              </p>
+              <ul className="space-y-3">
+                {t.expertise.planning.items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex gap-3 text-muted-foreground leading-relaxed"
+                  >
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+
+          {/* Closing */}
+          <div className="pt-2 text-center">
+            <p className="text-base sm:text-lg italic text-muted-foreground">
+              {language === "pt"
+                ? "Engenharia começa antes do código, no momento em que você entende o problema por completo."
+                : "Engineering starts before the code, the moment you fully understand the problem."}
+            </p>
           </div>
         </div>
       </div>

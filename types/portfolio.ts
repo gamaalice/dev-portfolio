@@ -26,9 +26,28 @@ export type Translation = {
     titleHighlight: string
     p1: string
     p2: string
-    p3: string
-    p4: string
-    quote: string
+    focus: {
+      title: string
+      text: string
+    }
+    expertise: {
+      frontend: {
+        title: string
+        items: string[]
+      }
+      software: {
+        title: string
+        items: string[]
+      }
+      planning: {
+        title: string
+        items: string[]
+      }
+    }
+    international: {
+      title: string
+      text: string
+    }
   }
 
   education: {
@@ -41,16 +60,28 @@ export type Translation = {
     }[]
   }
 
-  projects: {
-    title: string
-    titleHighlight: string
-    viewProject: string
-    items: {
+ projects: {
+  title: string
+  titleHighlight: string
+  viewSite: string
+  viewGithub: string
+  carousel: {
+    previous: string
+    next: string
+    goToImage: string
+    previewUnavailable: string
+  }
+  items: {
+      number: string
       title: string
+      category: string
+      year: string
       description: string
       tech: string[]
-      image: string
-      imageSize?: string
+      highlights: string[]
+      images: string[]
+      site: string
+      github: string
     }[]
   }
 
@@ -84,11 +115,6 @@ export type Translation = {
 export type Skill = {
   name: string
   icon?: ReactNode
-}
-
-export type ProjectLink = {
-  site: string
-  github: string
 }
 
 export const GLASS_CARD =
