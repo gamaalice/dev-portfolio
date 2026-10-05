@@ -342,20 +342,20 @@ export function Projects({
       `}
     >
       <div className="mx-auto max-w-[1500px]">
-        <h2
-          className="
-            mb-20
-            text-center
-            text-[clamp(2.5rem,5vw,4.5rem)]
-            font-black
-            uppercase
-            leading-[0.9]
-            tracking-[-0.05em]
-            text-black
-          "
-        >
-          {t.title} {t.titleHighlight}
-        </h2>
+      <h2
+  className="
+    mb-20
+    text-center
+    text-[clamp(2.5rem,5vw,4.5rem)]
+    font-black
+    uppercase
+    leading-[0.9]
+    tracking-[-0.05em]
+    text-black
+  "
+>
+  Meus Projetos
+</h2>
 
         <div className="flex flex-col gap-10 lg:gap-16">
           {t.items.map((project, index) => {

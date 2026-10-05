@@ -32,9 +32,10 @@ export function About({ t, language, isVisible }: AboutProps) {
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
         <div className="mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black">
-            {t.title} {t.titleHighlight}
-          </h2>
+        <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[0.9] text-black">
+  {t.title}{" "}
+  <span className="text-primary">{t.titleHighlight}</span>
+</h2>
 
           <p className="mt-3 text-lg sm:text-xl font-medium text-muted-foreground">
             {subtitle}

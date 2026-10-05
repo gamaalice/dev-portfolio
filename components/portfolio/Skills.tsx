@@ -18,9 +18,9 @@ export function Skills({ t, isVisible }: SkillsProps) {
     >
       <div className="container mx-auto max-w-7xl">
         <div className="container mx-auto max-w-7xl">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-16 text-black">
-            {t.title} {t.titleHighlight}
-          </h2>
+        <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[0.9] text-center mb-16 text-black">
+  {t.title} {t.titleHighlight}
+</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -94,12 +94,12 @@ export function Contact({ t, isVisible }: ContactProps) {
       <div className="container mx-auto max-w-7xl">
         {/* Cabeçalho */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold text-black sm:text-5xl md:text-6xl">
-            {t.title}{" "}
-            <span className="text-primary">
-              {t.titleHighlight}
-            </span>
-          </h2>
+        <h2 className="text-5xl font-extrabold tracking-[-0.03em] leading-[0.9] text-black sm:text-6xl md:text-7xl">
+  {t.title}{" "}
+  <span className="text-primary">
+    {t.titleHighlight}
+  </span>
+</h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
             {t.description}
