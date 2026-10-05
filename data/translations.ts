@@ -326,11 +326,25 @@ export const translations: Record<Language, Translation> = {
 },
     },
     contact: {
-      title: "Vamos",
-      titleHighlight: "Conversar",
-      description: "Disponível para novos projetos e oportunidades. Entre em contato!",
-      github: "GitHub",
-      linkedin: "LinkedIn",
+     title: "Vamos",
+  titleHighlight: "Conversar",
+  description: "Disponível para novos projetos e oportunidades. Entre em contato!",
+  github: "GitHub",
+  linkedin: "LinkedIn",
+
+  email: "Email",
+  name: "Nome",
+  message: "Mensagem",
+
+  namePlaceholder: "Seu nome",
+  emailPlaceholder: "seu@email.com",
+  messagePlaceholder: "O que você gostaria de me dizer?",
+
+  send: "Enviar mensagem",
+  sending: "Enviando...",
+  success: "Mensagem enviada com sucesso. Obrigada pelo contato!",
+  error:
+    "Não foi possível enviar sua mensagem. Tente novamente em alguns instantes.",
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} Alice Gama. Todos os direitos reservados.`,
@@ -636,11 +650,25 @@ carousel: {
 },
     },
     contact: {
-      title: "Let's",
-      titleHighlight: "Talk",
-      description: "Available for new projects and opportunities. Get in touch!",
-      github: "GitHub",
-      linkedin: "LinkedIn",
+     title: "Let's",
+  titleHighlight: "Talk",
+  description: "Available for new projects and opportunities. Get in touch!",
+  github: "GitHub",
+  linkedin: "LinkedIn",
+
+  email: "Email",
+  name: "Name",
+  message: "Message",
+
+  namePlaceholder: "Your name",
+  emailPlaceholder: "you@email.com",
+  messagePlaceholder: "What would you like to tell me?",
+
+  send: "Send message",
+  sending: "Sending...",
+  success: "Message sent successfully. Thank you for reaching out!",
+  error:
+    "Your message could not be sent. Please try again in a moment.",
     },
     footer: {
      copyright: `© ${new Date().getFullYear()} Alice Gama. All rights reserved.`,

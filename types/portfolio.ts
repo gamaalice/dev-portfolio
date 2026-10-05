@@ -105,6 +105,16 @@ export type Translation = {
     description: string
     github: string
     linkedin: string
+    email: string
+    name: string
+    message: string
+    namePlaceholder: string
+    emailPlaceholder: string
+    messagePlaceholder: string
+    send: string
+    sending: string
+    success: string
+    error: string
   }
 
   footer: {
