@@ -17,7 +17,7 @@ type AboutProps = {
 export function About({ t, language, isVisible }: AboutProps) {
   const subtitle =
     language === "pt"
-      ? "Base em Front-end, expandindo para Full-Stack"
+      ? "Base sólida em Front-end, expandindo para Full-Stack"
       : "Front-end foundation, expanding into Full-Stack"
 
   return (
@@ -30,12 +30,13 @@ export function About({ t, language, isVisible }: AboutProps) {
       }`}
     >
       <div className="container mx-auto max-w-6xl">
+
         {/* Heading */}
         <div className="mb-12">
-        <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[0.9] text-black">
-  {t.title}{" "}
-  <span className="text-primary">{t.titleHighlight}</span>
-</h2>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[0.9] text-black">
+            {t.title}{" "}
+            <span className="text-primary">{t.titleHighlight}</span>
+          </h2>
 
           <p className="mt-3 text-lg sm:text-xl font-medium text-muted-foreground">
             {subtitle}
@@ -43,68 +44,82 @@ export function About({ t, language, isVisible }: AboutProps) {
         </div>
 
         <div className="space-y-12">
-          {/* Introduction + Current Focus */}
-          <div className="grid md:grid-cols-[1.5fr_0.9fr] gap-10 items-start">
-            {/* Introduction */}
-            <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-foreground/90">
-                {t.p1}
-              </p>
 
-              <p className="text-lg leading-relaxed text-foreground/90">
-                {t.p2}
-              </p>
-            </div>
+          {/* Main About Card */}
+          <div className="relative">
 
-            {/* Current Focus */}
-            <div className={`rounded-3xl p-6 sm:p-7 ${GLASS_CARD}`}>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <FaLayerGroup className="text-xl text-primary" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/25 via-accent/10 to-primary/10" />
+
+            <div className={`relative rounded-3xl p-6 sm:p-10 ${GLASS_CARD}`}>
+
+              <div className="grid md:grid-cols-2 gap-6 text-lg leading-relaxed">
+
+                <p className="text-foreground/90">
+                  {t.p1}
+                </p>
+
+                <p className="text-foreground/90">
+                  {t.p2}
+                </p>
+
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <FaLayerGroup className="text-lg text-primary" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-primary">
+                      {t.focus.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-foreground/90">
+                    {t.focus.text}
+                  </p>
                 </div>
 
-                <h3 className="text-xl font-bold text-primary">
-                  {t.focus.title}
-                </h3>
+              <div>
+  <div className="flex items-center gap-2 mb-3">
+    <FaGlobeAmericas className="text-primary" />
+    <span className="text-base font-semibold text-foreground">
+      {t.international.title}
+    </span>
+  </div>
+
+ <div className="flex flex-wrap gap-2">
+  {t.international.text
+    .split("·")
+    .map((item, index) => (
+      <span
+        key={index}
+        className="text-lg leading-relaxed text-foreground/90"
+      >
+        {item.trim()}
+      </span>
+    ))}
+</div>
+</div>
+
               </div>
 
-              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                {t.focus.text}
-              </p>
+              <blockquote className="border-l-4 border-primary pl-6 py-4 italic text-lg text-primary mt-8 bg-primary/5 rounded-r-lg">
+                {language === "pt"
+                  ? "Engenharia começa antes do código, no momento em que você entende o problema por completo."
+                  : "Engineering starts before the code, the moment you fully understand the problem."}
+              </blockquote>
 
-              {/* International Experience */}
-              <div className="mt-6 pt-5 border-t border-border">
-                <div className="flex items-center gap-2 mb-3">
-                  <FaGlobeAmericas className="text-primary" />
-
-                  <span className="text-sm font-semibold text-foreground">
-                    {t.international.title}
-                  </span>
-                </div>
-
-                <div className="inline-flex flex-wrap gap-2">
-                  {t.international.text
-                    .split("·")
-                    .map((item, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1.5 rounded-full bg-background/60 border border-border text-sm text-muted-foreground"
-                      >
-                        {item.trim()}
-                      </span>
-                    ))}
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Expertise */}
           <div className="grid md:grid-cols-3 gap-6">
+
             {/* Front-end */}
             <div
               className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 ${GLASS_CARD}`}
             >
               <div className="flex items-center gap-4 mb-6">
+
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <FaLayerGroup className="text-2xl text-primary" />
                 </div>
@@ -112,6 +127,7 @@ export function About({ t, language, isVisible }: AboutProps) {
                 <h3 className="text-xl font-bold text-primary">
                   {t.expertise.frontend.title}
                 </h3>
+
               </div>
 
               <ul className="space-y-3">
@@ -132,6 +148,7 @@ export function About({ t, language, isVisible }: AboutProps) {
               className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-secondary/15 ${GLASS_CARD}`}
             >
               <div className="flex items-center gap-4 mb-6">
+
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
                   <FaProjectDiagram className="text-2xl text-secondary" />
                 </div>
@@ -139,6 +156,7 @@ export function About({ t, language, isVisible }: AboutProps) {
                 <h3 className="text-xl font-bold text-secondary">
                   {t.expertise.software.title}
                 </h3>
+
               </div>
 
               <ul className="space-y-3">
@@ -159,6 +177,7 @@ export function About({ t, language, isVisible }: AboutProps) {
               className={`h-full p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/15 ${GLASS_CARD}`}
             >
               <div className="flex items-center gap-4 mb-6">
+
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <FaProjectDiagram className="text-2xl text-accent" />
                 </div>
@@ -166,6 +185,7 @@ export function About({ t, language, isVisible }: AboutProps) {
                 <h3 className="text-xl font-bold text-accent">
                   {t.expertise.planning.title}
                 </h3>
+
               </div>
 
               <ul className="space-y-3">
@@ -180,16 +200,11 @@ export function About({ t, language, isVisible }: AboutProps) {
                 ))}
               </ul>
             </div>
+
           </div>
 
-          {/* Closing */}
-          <div className="pt-2 text-center">
-            <p className="text-base sm:text-lg italic text-muted-foreground">
-              {language === "pt"
-                ? "Engenharia começa antes do código, no momento em que você entende o problema por completo."
-                : "Engineering starts before the code, the moment you fully understand the problem."}
-            </p>
-          </div>
+         
+
         </div>
       </div>
     </section>
