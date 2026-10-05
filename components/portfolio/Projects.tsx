@@ -340,22 +340,27 @@ export function Projects({
             : "translate-y-10 opacity-0"
         }
       `}
+      style={{
+        fontFamily:
+          '"Helvetica Neue", Helvetica, Arial, sans-serif',
+      }}
     >
       <div className="mx-auto max-w-[1500px]">
-      <h2
-  className="
-    mb-20
-    text-center
-    text-[clamp(2.5rem,5vw,4.5rem)]
-    font-black
-    uppercase
-    leading-[0.9]
-    tracking-[-0.05em]
-    text-black
-  "
->
-  Meus Projetos
-</h2>
+
+        {/* Section title */}
+        <h2
+          className="
+            mb-20
+            text-center
+            text-[clamp(2.25rem,4vw,3.5rem)]
+            font-bold
+            leading-none
+            tracking-[-0.04em]
+            text-black
+          "
+        >
+          Meus Projetos
+        </h2>
 
         <div className="flex flex-col gap-10 lg:gap-16">
           {t.items.map((project, index) => {
@@ -409,6 +414,7 @@ export function Projects({
                       "
                     >
                       <div>
+
                         <div
                           className="
                             mb-8
@@ -420,11 +426,12 @@ export function Projects({
                         >
                           <span
                             className="
-                              text-sm
+                              text-xs
                               font-medium
                               uppercase
                               tracking-[0.18em]
                               text-black/45
+                              sm:text-sm
                             "
                           >
                             {project.category}
@@ -433,10 +440,11 @@ export function Projects({
                           <div className="flex items-center gap-4">
                             <span
                               className="
-                                text-sm
+                                text-xs
                                 font-medium
                                 tracking-[0.08em]
                                 text-black/45
+                                sm:text-sm
                               "
                             >
                               {project.year}
@@ -445,10 +453,11 @@ export function Projects({
                             <span
                               aria-hidden="true"
                               className="
-                                text-sm
+                                text-xs
                                 font-medium
                                 tracking-[0.08em]
                                 text-black/25
+                                sm:text-sm
                               "
                             >
                               {project.number}
@@ -458,16 +467,24 @@ export function Projects({
 
                         <h3
                           className="
-                            max-w-[700px]
-                            text-[clamp(3rem,6vw,6.5rem)]
-                            font-black
+                            max-w-[620px]
+                            text-[clamp(2.75rem,5vw,5rem)]
+                            font-bold
                             uppercase
-                            leading-[0.82]
-                            tracking-[-0.06em]
+                            leading-[0.88]
+                            tracking-[-0.055em]
                             text-black
                           "
                         >
-                          {project.title}
+                          {project.title === "CryptoDashboard" ? (
+                            <>
+                              Crypto
+                              <br />
+                              Dashboard
+                            </>
+                          ) : (
+                            project.title
+                          )}
                         </h3>
 
                         <div className="mt-8 flex flex-wrap gap-2">
@@ -492,6 +509,7 @@ export function Projects({
                       </div>
 
                       <div className="mt-12">
+
                         <p
                           className="
                             max-w-[620px]
@@ -506,6 +524,7 @@ export function Projects({
 
                         {(hasSite || hasGithub) && (
                           <div className="mt-8 flex flex-wrap gap-3">
+
                             {hasSite && (
                               <a
                                 href={project.site}
@@ -579,8 +598,10 @@ export function Projects({
                                 </span>
                               </a>
                             )}
+
                           </div>
                         )}
+
                       </div>
                     </div>
 
