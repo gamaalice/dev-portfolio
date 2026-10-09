@@ -346,12 +346,13 @@ export const translations: Record<Language, Translation> = {
   ],
 
   images: [
-    "/assets/scopeflow/1.png",
-    "/assets/scopeflow/2.png",
-    "/assets/scopeflow/3.png",
-    "/assets/scopeflow/4.png",
-    "/assets/scopeflow/5.png",
-    "/assets/scopeflow/6.png",
+    "/assets/scope/1.png",
+    "/assets/scope/2.png",
+    "/assets/scope/3.png",
+    "/assets/scope/4.png",
+    "/assets/scope/5.png",
+    "/assets/scope/6.png",
+    "/assets/scope/7.png",
   ],
 
   site: "https://scope-flow-kappa.vercel.app/",
@@ -715,12 +716,13 @@ carousel: {
   ],
 
   images: [
-    "/assets/scopeflow/1.png",
-    "/assets/scopeflow/2.png",
-    "/assets/scopeflow/3.png",
-    "/assets/scopeflow/4.png",
-    "/assets/scopeflow/5.png",
-    "/assets/scopeflow/6.png",
+    "/assets/scope/1.png",
+    "/assets/scope/2.png",
+    "/assets/scope/3.png",
+    "/assets/scope/4.png",
+    "/assets/scope/5.png",
+    "/assets/scope/6.png",
+    "/assets/scope/7.png",
   ],
 
   site: "https://scope-flow-kappa.vercel.app/",
