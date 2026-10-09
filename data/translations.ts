@@ -317,6 +317,46 @@ export const translations: Record<Language, Translation> = {
       site: "https://cryptodashbord-wine.vercel.app/",
       github: "https://github.com/gamaalice/cryptodashbord",
     },
+
+    {
+  number: "06",
+  title: "ScopeFlow",
+  category: "Aplicação Web Full-Stack",
+  year: "2026",
+
+  description:
+    "Ferramenta de gestão de escopo para freelancers que permite avaliar solicitações de alteração feitas por clientes, identificar demandas fora do escopo contratado, estimar custos adicionais e manter um histórico de decisões.",
+
+  tech: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "C#",
+    "ASP.NET Core",
+    "Entity Framework Core",
+    "SQLite",
+  ],
+
+  highlights: [
+    "Gestão de projetos e itens de escopo",
+    "Avaliação de solicitações de alteração",
+    "Identificação de demandas fora do escopo contratado",
+    "Registro do histórico de decisões",
+    "API REST com ASP.NET Core e Entity Framework Core",
+  ],
+
+  images: [
+    "/assets/scopeflow/1.png",
+    "/assets/scopeflow/2.png",
+    "/assets/scopeflow/3.png",
+    "/assets/scopeflow/4.png",
+    "/assets/scopeflow/5.png",
+    "/assets/scopeflow/6.png",
+  ],
+
+  site: "https://scope-flow-kappa.vercel.app/",
+  github: "https://github.com/gamaalice/scope-flow",
+},
       ],
     },
     skills: {
@@ -647,6 +687,45 @@ carousel: {
       site: "https://cryptodashbord-wine.vercel.app/",
       github: "https://github.com/gamaalice/cryptodashbord",
     },
+    {
+  number: "06",
+  title: "ScopeFlow",
+  category: "Full-Stack Web Application",
+  year: "2026",
+
+  description:
+    "A project scope management tool for freelancers to evaluate client change requests, identify work outside the agreed scope, estimate additional costs, and maintain a history of decisions.",
+
+  tech: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "C#",
+    "ASP.NET Core",
+    "Entity Framework Core",
+    "SQLite",
+  ],
+
+  highlights: [
+    "Project and scope item management",
+    "Client change request evaluation",
+    "Identification of out-of-scope work",
+    "Decision history tracking",
+    "REST API built with ASP.NET Core and Entity Framework Core",
+  ],
+
+  images: [
+    "/assets/scopeflow/1.png",
+    "/assets/scopeflow/2.png",
+    "/assets/scopeflow/3.png",
+    "/assets/scopeflow/4.png",
+    "/assets/scopeflow/5.png",
+    "/assets/scopeflow/6.png",
+  ],
+
+  site: "https://scope-flow-kappa.vercel.app/",
+  github: "https://github.com/gamaalice/scope-flow",
+},
   ],
 },
     skills: {
