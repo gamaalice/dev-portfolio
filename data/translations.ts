@@ -275,12 +275,12 @@ text: "Em 2025, participei de uma experiência de imersão internacional nos Est
       ],
 
       images: [
-        "/assets/velvet/mainpage.png",
-        "/assets/velvet/card_1.png",
-        "/assets/velvet/card_2.png",
-        "/assets/velvet/estante.png",
-        "/assets/velvet/footer.png",
-        "/assets/velvet/singin.png",
+        "/assets/velvet/1.png",
+        "/assets/velvet/2.png",
+        "/assets/velvet/3.png",
+        "/assets/velvet/4.png",
+        "/assets/velvet/5.png",
+      
       ],
 
       site: "https://velvet-eight-chi.vercel.app/",
@@ -661,12 +661,11 @@ carousel: {
         "Relational persistence with PostgreSQL and Prisma",
       ],
       images: [
-        "/assets/velvet/mainpage.png",
-        "/assets/velvet/card_1.png",
-        "/assets/velvet/card_2.png",
-        "/assets/velvet/estante.png",
-        "/assets/velvet/footer.png",
-        "/assets/velvet/singin.png",
+        "/assets/velvet/1.png",
+        "/assets/velvet/2.png",
+        "/assets/velvet/3.png",
+        "/assets/velvet/4.png",
+        "/assets/velvet/5.png",
       ],
       site: "https://velvet-eight-chi.vercel.app/",
       github: "https://github.com/gamaalice/Velvet",
