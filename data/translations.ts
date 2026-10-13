@@ -75,7 +75,7 @@ items: [
   international: {
     title: "Experiência Internacional",
    
-text: "Em 2025, participei de uma experiência de imersão internacional nos Estados Unidos, Canadá e México, desenvolvendo minha adaptabilidade e comunicação em contextos multiculturais. Tenho nível intermediário de inglês e espanhol."
+text: "Em 2025, participei de uma experiência de imersão internacional nos Estados Unidos, Canadá e México, desenvolvendo minha adaptabilidade e comunicação em contextos multiculturais."
 
   }
 },
@@ -481,7 +481,7 @@ items: [
   international: {
     title: "International Experience",
   
-text: "In 2025, I took part in an international immersion experience across the United States, Canada, and Mexico, developing my adaptability and communication in multicultural contexts. I have intermediate English and Spanish skills."
+text: "In 2025, I took part in an international immersion experience across the United States, Canada, and Mexico, developing my adaptability and communication in multicultural contexts."
 
   }
 },

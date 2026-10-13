@@ -37,7 +37,7 @@ export function About({ t, language, isVisible }: AboutProps) {
           international: {
             title: "Experiência internacional",
             text:
-              "Estados Unidos · Canadá · México · Inglês intermediário · Espanhol intermediário",
+              "Experiência de imersão internacional nos Estados Unidos, Canadá e México, com vivência multicultural e desenvolvimento da comunicação em diferentes contextos culturais.",
           },
 
           quote:
@@ -91,7 +91,7 @@ export function About({ t, language, isVisible }: AboutProps) {
           international: {
             title: "International experience",
             text:
-              "United States · Canada · Mexico · Intermediate English · Intermediate Spanish",
+              "International immersion experience in the United States, Canada, and Mexico, developing cross-cultural awareness, adaptability, and communication skills in multicultural environments.",
           },
 
           quote:
