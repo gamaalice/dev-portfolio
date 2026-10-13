@@ -142,7 +142,7 @@ function ProjectCarousel({
 
   if (images.length === 0) {
     return (
-      <div className="flex h-full min-h-[420px] items-center justify-center lg:min-h-0">
+      <div className="flex h-full items-center justify-center">
         <span className="text-sm text-black/40">
           {labels.previewUnavailable}
         </span>
@@ -155,10 +155,8 @@ function ProjectCarousel({
       className="
         relative
         h-full
-        min-h-[420px]
         select-none
         overflow-hidden
-        lg:min-h-0
       "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -608,8 +606,10 @@ export function Projects({
                     <div
                       className="
                         relative
-                        min-h-[420px]
+                        aspect-[1230/1384]
                         overflow-hidden
+                        lg:aspect-auto
+                        lg:h-full
                         lg:min-h-0
                       "
                     >
