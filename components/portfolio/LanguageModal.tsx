@@ -11,10 +11,10 @@ export function LanguageModal({ onSelectLanguage }: LanguageModalProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md animate-fadeIn">
       <div className="bg-card rounded-3xl p-10 shadow-2xl max-w-md w-full mx-4 border-2 border-primary/30 animate-float">
         <h2 className="text-4xl font-bold text-center mb-3 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-          Welcome | Bem-vindo
+          Welcome
         </h2>
         <p className="text-center text-muted-foreground mb-10 text-lg">
-          Select your language | Selecione seu idioma
+          Select your language
         </p>
 
         <div className="flex flex-col gap-4">

@@ -22,7 +22,14 @@ import {
   SiDialogflow,
   SiGithubcopilot,
   SiAnthropic,
-  SiTurso,
+  SiPhp,
+  SiAngular,
+  SiVuedotjs,
+  SiExpo,
+  SiDotnet,
+  SiVercel,
+  SiN8N,
+  SiSqlite,
 } from "react-icons/si"
 
 import {
@@ -33,12 +40,14 @@ import {
 } from "react-icons/fa6"
 
 import type { Skill } from "@/types/portfolio"
-
+import { FaHashtag } from "react-icons/fa";
 export const techStack: Record<string, Skill[]> = {
   languages: [
     { name: "JavaScript", icon: <SiJavascript /> },
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "Python", icon: <SiPython /> },
+    { name: "PHP", icon: <SiPhp /> },
+ { name: "C#", icon: <FaHashtag /> },
     { name: "SQL", icon: <FaDatabase /> },
     { name: "HTML5", icon: <SiHtml5 /> },
     { name: "CSS3", icon: <SiCss /> },
@@ -53,17 +62,27 @@ export const techStack: Record<string, Skill[]> = {
   ],
 
   frameworks: [
-    { name: "Next.js", icon: <SiNextdotjs /> },
     { name: "React", icon: <SiReact /> },
+    { name: "Next.js", icon: <SiNextdotjs /> },
+    { name: "Angular", icon: <SiAngular /> },
+    { name: "Vue.js", icon: <SiVuedotjs /> },
+    { name: "Expo", icon: <SiExpo /> },
     { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Express", icon: <SiExpress /> },
+    { name: "ASP.NET Core", icon: <SiDotnet /> },
   ],
 
   libraries: [
     { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "shadcn/ui", icon: <FaCode /> },
+    { name: "Zod", icon: <FaCode /> },
+    { name: "TanStack Query", icon: <FaCode /> },
+    { name: "Prisma", icon: <FaDatabase /> },
+    { name: "Entity Framework Core", icon: <FaDatabase /> },
     { name: "Pandas", icon: <SiPandas /> },
     { name: "NumPy", icon: <SiNumpy /> },
     { name: "Matplotlib", icon: <FaChartLine /> },
+    { name: "PHPMailer", icon: <FaCode /> },
   ],
 
   tools: [
@@ -71,16 +90,18 @@ export const techStack: Record<string, Skill[]> = {
     { name: "GitHub", icon: <SiGithub /> },
     { name: "VS Code", icon: <FaCode /> },
     { name: "Figma", icon: <SiFigma /> },
+    { name: "Vercel", icon: <SiVercel /> },
+    { name: "n8n", icon: <SiN8N /> },
     { name: "Google Auth", icon: <SiGoogle /> },
     { name: "Better Auth", icon: <FaCode /> },
   ],
 
   databases: [
-    { name: "MongoDB", icon: <SiMongodb /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
-    { name: "Prisma", icon: <FaDatabase /> },
     { name: "MySQL", icon: <SiMysql /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "SQLite", icon: <SiSqlite /> },
     { name: "Firebase", icon: <SiFirebase /> },
     { name: "Oracle", icon: <FaDatabase /> },
   ],
-}
+};

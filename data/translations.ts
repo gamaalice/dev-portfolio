@@ -23,36 +23,41 @@ export const translations: Record<Language, Translation> = {
   title: "Sobre",
   titleHighlight: "Mim",
 
-  p1: "Sou estudante de Engenharia de Software, com conclusão prevista para 2027, e me posiciono profissionalmente como Desenvolvedora Full-Stack, com experiência mais concentrada em Front-end e atuação também no desenvolvimento de backend, integração de dados e construção de aplicações completas. Minha trajetória começou como freelancer, com sites, landing pages e portfólios para outros profissionais, e evoluiu para soluções voltadas a empresas e problemas internos, incluindo sistemas de gestão.",
+ 
+p1: "Sou estudante de Engenharia de Software, com conclusão prevista para 2027, e atuo como desenvolvedora Full-Stack Júnior, com uma base mais forte em Front-end. Minha trajetória começou como freelancer, desenvolvendo sites, landing pages e portfólios, e evoluiu para aplicações mais completas e sistemas de gestão, incluindo funcionalidades de backend, integração com APIs e persistência de dados.",
 
-  p2: "Atualmente atuo como desenvolvedora Front-end Junior no desenvolvimento do site institucional completo de uma empresa de engenharia. Ao longo dos meus projetos profissionais e pessoais, participo de diferentes etapas do ciclo de desenvolvimento, desde o levantamento e organização de requisitos, planejamento e definição da arquitetura até implementação, integração com banco de dados, autenticação e deploy. Tenho especial interesse em arquitetura de software, organização e manutenção do código, componentização, integração entre sistemas e experiência do usuário.",
+p2: "Atualmente, trabalho como desenvolvedora Front-end Júnior na EASE Engenharia, participando do desenvolvimento do site institucional e de funcionalidades que envolvem frontend, backend e processamento de formulários. Nos meus projetos profissionais e pessoais, busco compreender o problema antes de definir a implementação e participo de etapas como levantamento de requisitos, planejamento, organização do código, integração com banco de dados, autenticação e deploy. Tenho interesse especial em arquitetura de software, código sustentável, componentização, integração entre sistemas e experiência do usuário.",
 
   focus: {
     title: "Foco atual",
-    text: "Python, automação e integração com IA, explorando ferramentas como n8n para integrar sistemas e aplicar essas tecnologias em processos e problemas reais."
+   
+text: "Estou aprofundando meus conhecimentos em Python, automação e integração com inteligência artificial, explorando ferramentas como n8n para conectar sistemas e aplicar essas tecnologias a processos e problemas reais."
+
   },
 
   expertise: {
     frontend: {
       title: "Front-end Engineering",
-      items: [
-        "Desenvolvimento de aplicações web modernas, responsivas e escaláveis",
-        "React, Next.js, Vite, JavaScript e TypeScript",
-        "Arquitetura baseada em componentes e UI reutilizável",
-        "Interfaces com foco em usabilidade e experiência do usuário",
-        "Integração com APIs REST e serviços em nuvem"
-      ]
+items: [
+  "Desenvolvimento de interfaces web responsivas e aplicações com foco em usabilidade",
+  "React, Next.js, Vite, JavaScript e TypeScript",
+  "Componentização e criação de interfaces reutilizáveis",
+  "Estruturação de páginas e fluxos de navegação com atenção à experiência do usuário",
+  "Integração com APIs REST e serviços em nuvem"
+]
+
     },
 
     software: {
       title: "Software Engineering",
-      items: [
-        "Arquitetura de software com foco em organização, escalabilidade e manutenção",
-        "Modelagem de dados, persistência e autenticação",
-        "Node.js, Next.js e NestJS para lógica de backend e integração de APIs",
-        "Desenvolvimento de aplicações completas entre diferentes camadas",
-        "Expansão para Python, automação, tratamento de dados e integração com IA"
-      ]
+items: [
+  "Organização do código e fundamentos de arquitetura de software",
+  "Modelagem de dados, persistência e autenticação",
+  "Desenvolvimento e integração de APIs REST e funcionalidades de backend",
+  "Desenvolvimento de aplicações completas entre diferentes camadas",
+  "Aprofundamento em Python, automação e integração com inteligência artificial"
+]
+
     },
 
     planning: {
@@ -69,7 +74,9 @@ export const translations: Record<Language, Translation> = {
 
   international: {
     title: "Experiência Internacional",
-    text: "Em 2025, realizei uma experiência de imersão internacional nos Estados Unidos, Canadá e México, ampliando minha adaptabilidade, comunicação e capacidade de atuar em diferentes contextos e ambientes multiculturais. Possuo proficiência intermediária em Inglês e Espanhol."
+   
+text: "Em 2025, participei de uma experiência de imersão internacional nos Estados Unidos, Canadá e México, desenvolvendo minha adaptabilidade e comunicação em contextos multiculturais. Tenho nível intermediário de inglês e espanhol."
+
   }
 },
     education: {
@@ -420,36 +427,43 @@ export const translations: Record<Language, Translation> = {
   title: "About",
   titleHighlight: "Me",
 
-  p1: "I'm a Software Engineering student, graduating in 2027, and I position myself professionally as a Full-Stack Developer, with most of my experience concentrated in Front-end and hands-on experience in backend development, data integration, and building complete applications. My journey started as a freelancer, building websites, landing pages, and portfolios for other professionals, and evolved into solutions for companies and internal business problems, including management systems.",
+ 
+p1: "I'm a Software Engineering student graduating in 2027, and I position myself as a Junior Full-Stack Developer with a stronger foundation in Front-end. My journey began as a freelancer building websites, landing pages, and portfolios, then expanded into more complete applications and management systems involving backend functionality, API integration, and data persistence.",
 
-  p2: "I currently work as a Junior Front-end Developer on the development of the complete institutional website of an engineering company. Across my professional and personal projects, I take part in different stages of the development cycle, from requirements gathering and organization, planning, and architectural decisions to implementation, database integration, authentication, and deployment. I'm particularly interested in software architecture, code organization and maintainability, componentization, system integration, and user experience.",
+p2: "I currently work as a Junior Front-end Developer at EASE Engenharia, contributing to its institutional website and features involving frontend, backend, and form processing. In my professional and personal projects, I aim to understand the problem before choosing an implementation and take part in tasks such as requirements gathering, planning, code organization, database integration, authentication, and deployment. I'm especially interested in software architecture, maintainable code, componentization, system integration, and user experience.",
+
 
   focus: {
     title: "Current Focus",
-    text: "Python, automation, and AI integration, exploring tools such as n8n to connect systems and apply these technologies to real processes and problems."
+   
+text: "I'm deepening my knowledge of Python, automation, and AI integration, exploring tools such as n8n to connect systems and apply these technologies to real processes and problems."
+
   },
 
   expertise: {
     frontend: {
       title: "Front-end Engineering",
-      items: [
-        "Development of modern, responsive, and scalable web applications",
-        "React, Next.js, Vite, JavaScript, and TypeScript",
-        "Component-based architecture and reusable UI",
-        "Interfaces focused on usability and user experience",
-        "Integration with REST APIs and cloud services"
-      ]
+    
+items: [
+  "Development of responsive web interfaces and applications focused on usability",
+  "React, Next.js, Vite, JavaScript, and TypeScript",
+  "Componentization and reusable interfaces",
+  "Page structure and navigation flows focused on user experience",
+  "Integration with REST APIs and cloud services"
+]
+
     },
 
     software: {
       title: "Software Engineering",
-      items: [
-        "Software architecture focused on organization, scalability, and maintainability",
-        "Data modeling, persistence, and authentication",
-        "Node.js, Next.js, and NestJS for backend logic and API integration",
-        "Development of complete applications across different layers",
-        "Expanding into Python, automation, data handling, and AI integration"
-      ]
+items: [
+  "Code organization and software architecture fundamentals",
+  "Data modeling, persistence, and authentication",
+  "Development and integration of REST APIs and backend features",
+  "Development of complete applications across different layers",
+  "Deepening knowledge of Python, automation, and AI integration"
+]
+
     },
 
     planning: {
@@ -466,7 +480,9 @@ export const translations: Record<Language, Translation> = {
 
   international: {
     title: "International Experience",
-    text: "In 2025, I took part in an international immersion experience across the United States, Canada, and Mexico, strengthening my adaptability, communication, and ability to work across different contexts and multicultural environments. I have intermediate proficiency in English and Spanish."
+  
+text: "In 2025, I took part in an international immersion experience across the United States, Canada, and Mexico, developing my adaptability and communication in multicultural contexts. I have intermediate English and Spanish skills."
+
   }
 },
     education: {
